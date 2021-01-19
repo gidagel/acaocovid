@@ -10,5 +10,11 @@
     "name": "Post",
     "repeatable": true,
     "value": "post.json"
+  },
+  {
+    "id": "home",
+    "name": "Home",
+    "repeatable": false,
+    "value": "home.json"
   }
 ]
