@@ -1,13 +1,11 @@
 const {
   prismicRepo,
-  releaseID,
   accessToken,
 } = require('./prismic-configuration')
 const linkResolver = require('./src/utils/linkResolver')
 
 const reponame = process.env.PRISMIC_REPO_NAME || prismicRepo
 const apiKey = process.env.PRISMIC_API_KEY || accessToken
-const prismicReleaseID = process.env.PRISMIC_RELEASE_ID || releaseID
 
 const blogHomeSchema = require('./custom_types/bloghome.json')
 const postSchema = require('./custom_types/post.json')
@@ -17,7 +15,6 @@ const gastbySourcePrismicConfig = {
   options: {
     repositoryName: reponame,
     accessToken: apiKey,
-    releaseID: prismicReleaseID,
     prismicToolbar: true,
     linkResolver: () => (doc) => linkResolver(doc),
     schemas: {
