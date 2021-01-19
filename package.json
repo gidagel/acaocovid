@@ -1,57 +1,52 @@
 {
-  "name": "gatsby-blog-cosmicjs",
-  "description": "Gatsby Blog Cosmic JS",
-  "version": "2.0.0",
-  "author": "Jazib Sawar <jazibsawar@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/jazibsawar/gatsby-blog-cosmicjs/issues"
-  },
+  "name": "gatsby-blog",
+  "private": true,
+  "description": "A sample blog website built using Gatsby connected to Prismic CMS",
+  "version": "0.1.0",
+  "author": "Levi Gable",
   "dependencies": {
-    "gatsby": "^2.20.17",
-    "gatsby-background-image": "^1.1.1",
-    "gatsby-image": "^2.3.4",
-    "gatsby-plugin-google-analytics": "^2.2.4",
-    "gatsby-plugin-offline": "^3.1.4",
-    "gatsby-plugin-react-helmet": "^3.2.4",
-    "gatsby-plugin-sharp": "^2.5.6",
-    "gatsby-plugin-typography": "^2.4.3",
-    "gatsby-source-cosmicjs": "^1.1.0",
-    "gatsby-source-filesystem": "^2.2.4",
-    "gatsby-transformer-sharp": "^2.4.6",
-    "lodash": "^4.17.15",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0",
-    "react-typography": "^0.16.19",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "gatsby": "^2.29.2",
+    "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-offline": "^3.7.1",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sass": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-source-prismic": "^3.3.1",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "node-sass": "^4.13.1",
+    "prismic-reactjs": "^1.3.3",
+    "prismic-richtext": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0",
-    "prettier": "^2.0.4"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
-  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run clean && npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
-  "scripts": {
-    "dev": "npm run develop",
-    "start": "gatsby build; gatsby serve --port $PORT",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop;",
-    "poll-content": "while sleep 1; do curl -X POST http://localhost:8000/__refresh; done",
-    "build": "gatsby build",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "url": "https://github.com/prismicio/gatsby-blog"
   }
 }
