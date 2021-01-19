@@ -14,8 +14,8 @@ const NotFoundPage = () => (
 
 export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
-    index: Homepage,
-    blog_post: Post,
-    blog_home: BlogHomePage
+    home: Homepage,
+    post: Post,
+    bloghome: BlogHomePage
   },
 })
