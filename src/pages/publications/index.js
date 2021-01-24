@@ -8,7 +8,7 @@ import { withPreview } from 'gatsby-source-prismic'
 // Query for the Blog Home content in Prismic
 export const query = graphql`
   query {
-    prismicBloghome {
+    prismicPublications {
       data {
         description {
           text
@@ -23,10 +23,8 @@ export const query = graphql`
       id
       type
     }
-    allPrismicPost(
-      sort: { fields: data___date, order: DESC }
-      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "blog"}}}}}}
-      ) {
+    allPrismicPost(sort: { fields: data___date, order: DESC }
+      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "publicacoes"}}}}}}) {
       edges {
         node {
           url
@@ -58,10 +56,10 @@ export const query = graphql`
 `
 
 // Using the queried Blog Home document data, we render the top section
-const BlogHomeHead = ({ page }) => {
+const ArticleHead = ({ page }) => {
   const avatar = { backgroundImage: `url(${page.image.url})` }
   return (
-    <div className="home-header" data-wio-id={page.id}>
+    <div className="home-header container" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
       <h1>{RichText.asText(page.headline)}</h1>
       <p className="blog-description">{RichText.asText(page.description)}</p>
@@ -69,18 +67,18 @@ const BlogHomeHead = ({ page }) => {
   )
 }
 
-export const BlogHomePage = ({ data }) => {
+export const PublicationsPage = ({ data }) => {
   if (!data) return null
   // Define the Blog Home & Blog Post content returned from Prismic
-  const bloghome = data.prismicBloghome.data
+  const article = data.prismicPublications.data
   const posts = data.allPrismicPost.edges
 
   return (
     <Layout>
-      <BlogHomeHead page={bloghome} />
+      <ArticleHead page={article} />
       <BlogPosts posts={posts} />
     </Layout>
   )
 }
 
-export default withPreview(BlogHomePage)
+export default withPreview(PublicationsPage)

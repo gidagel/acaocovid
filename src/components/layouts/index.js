@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Footer from './Footer'
+import Header from './Header'
+import HeaderSmall from './HeaderSmall'
 import '../../stylesheets/main.scss'
 
 export default (props) => (
@@ -41,6 +43,8 @@ const Layout = ({ data, children }) => {
           rel="stylesheet"
         />
       </Helmet>
+      <Header />
+      <HeaderSmall />
       <main>{children}</main>
       <Footer />
     </>

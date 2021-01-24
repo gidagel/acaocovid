@@ -9,6 +9,10 @@ const apiKey = process.env.PRISMIC_API_KEY || accessToken
 
 const blogHomeSchema = require('./custom_types/bloghome.json')
 const postSchema = require('./custom_types/post.json')
+const categorySchema = require('./custom_types/category.json')
+const pressSchema = require('./custom_types/press.json')
+const publicationsSchema = require('./custom_types/publications.json')
+const studiesSchema = require('./custom_types/studies.json')
 
 const gastbySourcePrismicConfig = {
   resolve: 'gatsby-source-prismic',
@@ -20,6 +24,10 @@ const gastbySourcePrismicConfig = {
     schemas: {
       blogHome: blogHomeSchema,
       post: postSchema,
+      category: categorySchema,
+      press: pressSchema,
+      publications: publicationsSchema,
+      studies: studiesSchema
     },
   },
 }

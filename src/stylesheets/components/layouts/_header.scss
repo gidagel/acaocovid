@@ -1,0 +1,46 @@
+header {
+  background-color: #ffffff;
+}
+
+.logo {
+  height: 5em;
+}
+
+.logo img {
+  width: 5em;
+}
+
+.header_links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* small nav */
+.header_small_button{
+  padding: 10px;
+  margin: 0;
+  float: right;
+}
+.header_small{
+  width: 100%;
+  display: none;
+  float: right;
+}
+
+
+@media (max-width: $max-width-sm) {
+  header{
+    display: none
+  }
+  .header_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header_small{
+    display: block
+  }
+}

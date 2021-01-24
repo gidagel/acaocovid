@@ -8,7 +8,7 @@ import { withPreview } from 'gatsby-source-prismic'
 // Query for the Blog Home content in Prismic
 export const query = graphql`
   query {
-    prismicBloghome {
+    prismicStudies {
       data {
         description {
           text
@@ -23,10 +23,8 @@ export const query = graphql`
       id
       type
     }
-    allPrismicPost(
-      sort: { fields: data___date, order: DESC }
-      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "blog"}}}}}}
-      ) {
+    allPrismicPost(sort: { fields: data___date, order: DESC }
+      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "estudos"}}}}}}) {
       edges {
         node {
           url
@@ -58,29 +56,29 @@ export const query = graphql`
 `
 
 // Using the queried Blog Home document data, we render the top section
-const BlogHomeHead = ({ page }) => {
-  const avatar = { backgroundImage: `url(${page.image.url})` }
+const StudiesHead = ({ study }) => {
+  const avatar = { backgroundImage: `url(${study.image.url})` }
   return (
-    <div className="home-header" data-wio-id={page.id}>
-      <div className="blog-avatar" style={avatar} />
-      <h1>{RichText.asText(page.headline)}</h1>
-      <p className="blog-description">{RichText.asText(page.description)}</p>
+    <div className="studies-header" data-wio-id={study.id}>
+      <div className="studies-avatar" style={avatar} />
+      <h1>{RichText.asText(study.headline)}</h1>
+      <p className="studies-description">{RichText.asText(study.description)}</p>
     </div>
   )
 }
 
-export const BlogHomePage = ({ data }) => {
+export const StudiesPage = ({ data }) => {
   if (!data) return null
   // Define the Blog Home & Blog Post content returned from Prismic
-  const bloghome = data.prismicBloghome.data
+  const studies = data.prismicStudies.data
   const posts = data.allPrismicPost.edges
 
   return (
     <Layout>
-      <BlogHomeHead page={bloghome} />
+      <StudiesHead study={studies} />
       <BlogPosts posts={posts} />
     </Layout>
   )
 }
 
-export default withPreview(BlogHomePage)
+export default withPreview(StudiesPage)

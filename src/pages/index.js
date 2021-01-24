@@ -7,7 +7,7 @@ export const Homepage = () => {
 
   return (
     <Layout>
-      <a href='/blog'>Blog</a>
+      <p>Content</p>
     </Layout>
   )
 }

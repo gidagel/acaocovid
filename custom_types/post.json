@@ -103,5 +103,24 @@
         }
       }
     }
+  },
+ "Meta" : {
+    "categories" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "category" : {
+            "type" : "Link",
+            "config" : {
+              "select" : "document",
+              "customtypes" : [ "category" ],
+              "label" : "category",
+              "placeholder" : "Category"
+            }
+          }
+        },
+        "label" : "Categories"
+      }
+    }
   }
 }
