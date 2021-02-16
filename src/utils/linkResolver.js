@@ -6,6 +6,12 @@ const linkResolver = (doc) => {
   if (doc.type === 'post') {
     return `/blog/${doc.uid}`
   }
+  if (doc.type === 'study') {
+    return `/studies/${doc.uid}`
+  }
+  if (doc.type === 'publication') {
+    return `/publications/${doc.uid}`
+  }
   return '/'
 }
 

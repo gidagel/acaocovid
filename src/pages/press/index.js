@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Text} from 'react'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import Layout from '../../components/layouts'
@@ -26,8 +26,7 @@ export const query = graphql`
     allPrismicPost(
       sort: { fields: data___date, order: DESC }
       filter: {data: {categories: {elemMatch: {category: {tags: {eq: "imprensa"}}}}}}
-      )
-      {
+      ) {
       edges {
         node {
           url
@@ -59,13 +58,13 @@ export const query = graphql`
 `
 
 // Using the queried Blog Home document data, we render the top section
-const PressHead = ({ page }) => {
+const BlogHomeHead = ({ page }) => {
   const avatar = { backgroundImage: `url(${page.image.url})` }
   return (
-    <div className="home-header container" data-wio-id={page.id}>
+    <div className="home-header" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
-      <h1>{RichText.asText(page.headline)}</h1>
-      <p className="blog-description">{RichText.asText(page.description)}</p>
+      <h1>{page.headline.text}</h1>
+      <p className="blog-description">{page.description.text}</p>
     </div>
   )
 }
@@ -78,7 +77,7 @@ export const PressPage = ({ data }) => {
 
   return (
     <Layout>
-      <PressHead page={press} />
+      <BlogHomeHead page={press} />
       <BlogPosts posts={posts} />
     </Layout>
   )

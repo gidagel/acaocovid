@@ -61,8 +61,8 @@ const StudiesHead = ({ study }) => {
   return (
     <div className="studies-header" data-wio-id={study.id}>
       <div className="studies-avatar" style={avatar} />
-      <h1>{RichText.asText(study.headline)}</h1>
-      <p className="studies-description">{RichText.asText(study.description)}</p>
+      <h1>{study.headline.text}</h1>
+      <p className="studies-description">{study.description.text}</p>
     </div>
   )
 }

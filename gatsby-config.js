@@ -11,8 +11,11 @@ const blogHomeSchema = require('./custom_types/bloghome.json')
 const postSchema = require('./custom_types/post.json')
 const categorySchema = require('./custom_types/category.json')
 const pressSchema = require('./custom_types/press.json')
+const newsSchema = require('./custom_types/news.json')
 const publicationsSchema = require('./custom_types/publications.json')
+const publicationSchema = require('./custom_types/publication.json')
 const studiesSchema = require('./custom_types/studies.json')
+const studySchema = require('./custom_types/study.json')
 
 const gastbySourcePrismicConfig = {
   resolve: 'gatsby-source-prismic',
@@ -27,7 +30,10 @@ const gastbySourcePrismicConfig = {
       category: categorySchema,
       press: pressSchema,
       publications: publicationsSchema,
-      studies: studiesSchema
+      studies: studiesSchema,
+      study: studySchema,
+      publication: publicationSchema,
+      news: newsSchema
     },
   },
 }

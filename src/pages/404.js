@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { withUnpublishedPreview } from 'gatsby-source-prismic'
 import { Post } from '../templates/post'
+import { Study } from '../templates/study'
 import { Homepage } from './index'
 import Layout from '../components/layouts'
 import { BlogHomePage } from './blog/index'
@@ -19,6 +20,7 @@ export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
     home: Homepage,
     post: Post,
+    study: Study,
     bloghome: BlogHomePage,
     studies: StudiesPage,
     publications: PublicationsPage,

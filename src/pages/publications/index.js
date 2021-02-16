@@ -61,8 +61,8 @@ const ArticleHead = ({ page }) => {
   return (
     <div className="home-header container" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
-      <h1>{RichText.asText(page.headline)}</h1>
-      <p className="blog-description">{RichText.asText(page.description)}</p>
+      <h1>{page.headline.text}</h1>
+      <p className="blog-description">{page.description.text}</p>
     </div>
   )
 }

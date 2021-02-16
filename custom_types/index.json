@@ -12,9 +12,45 @@
     "value": "post.json"
   },
   {
+    "id": "study",
+    "name": "Study",
+    "repeatable": true,
+    "value": "study.json"
+  },
+  {
+    "id": "publication",
+    "name": "Publication",
+    "repeatable": true,
+    "value": "publication.json"
+  },
+  {
+    "id": "category",
+    "name": "Category",
+    "repeatable": true,
+    "value": "category.json"
+  },
+  {
     "id": "home",
     "name": "Home",
     "repeatable": false,
     "value": "home.json"
+  },
+  {
+    "id": "press",
+    "name": "Press",
+    "repeatable": false,
+    "value": "press.json"
+  },
+  {
+    "id": "studies",
+    "name": "Studies",
+    "repeatable": false,
+    "value": "studies.json"
+  },
+  {
+    "id": "publications",
+    "name": "Publications",
+    "repeatable": false,
+    "value": "publications.json"
   }
 ]
