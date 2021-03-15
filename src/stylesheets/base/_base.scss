@@ -25,3 +25,11 @@ body {
   background-color: #f1f1f1;
   width: 100%;
 }
+
+main {
+  padding: 2em;
+
+  @media (max-width: $max-width-sm) {
+    padding: 4em 2em;
+  }
+}

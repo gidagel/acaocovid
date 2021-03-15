@@ -23,8 +23,10 @@ export const query = graphql`
       id
       type
     }
-    allPrismicPost(sort: { fields: data___date, order: DESC }
-      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "estudos"}}}}}}) {
+    allPrismicStudy(
+      sort: { fields: data___date, order: DESC }
+      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "estudos"}}}}}}
+      ) {
       edges {
         node {
           url
@@ -37,7 +39,7 @@ export const query = graphql`
             }
             date
             body {
-              ... on PrismicPostBodyText {
+              ... on PrismicStudyBodyText {
                 id
                 slice_label
                 slice_type
@@ -71,7 +73,7 @@ export const StudiesPage = ({ data }) => {
   if (!data) return null
   // Define the Blog Home & Blog Post content returned from Prismic
   const studies = data.prismicStudies.data
-  const posts = data.allPrismicPost.edges
+  const posts = data.allPrismicStudy.edges
 
   return (
     <Layout>

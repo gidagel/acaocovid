@@ -3,11 +3,11 @@ header {
 }
 
 .logo {
-  height: 5em;
+  height: 6em;
 }
 
 .logo img {
-  width: 5em;
+  width: 6em;
 }
 
 .header_links {
@@ -15,18 +15,19 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  font-size: 0.9em;
+  font-weight: 600;
 }
+
 
 /* small nav */
 .header_small_button{
   padding: 10px;
   margin: 0;
-  float: right;
 }
 .header_small{
   width: 100%;
   display: none;
-  float: right;
 }
 
 
@@ -41,6 +42,8 @@ header {
     flex-direction: column;
   }
   .header_small{
-    display: block
+    display: block;
+    background-color: $secondary;
+    position: absolute;
   }
 }

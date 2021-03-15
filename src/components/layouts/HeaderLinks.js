@@ -13,7 +13,7 @@ const HeaderLinks = (props) => {
     return (
       <div className="header_links">
         <Link to='/simulator' key="simulator" onClick={handleClick}>Simulador</Link>
-        <Link to='/studies' key="studies" onClick={handleClick}>Estudos</Link>
+        <Link to='/estudos' key="studies" onClick={handleClick}>Estudos</Link>
         <a href='/publications'>Publicações</a>
         <a href="/">
           <div className="logo">

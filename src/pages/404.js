@@ -5,7 +5,7 @@ import { Study } from '../templates/study'
 import { Homepage } from './index'
 import Layout from '../components/layouts'
 import { BlogHomePage } from './blog/index'
-import { StudiesPage } from './studies/index'
+import { StudiesPage } from './estudos/index'
 import { PublicationsPage } from './publications/index'
 import { PressPage } from './press/index'
 

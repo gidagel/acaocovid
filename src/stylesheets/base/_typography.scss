@@ -1,11 +1,11 @@
 a {
-  color: #353535;
+  color: $offBlack;
   text-decoration: none;
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 23px;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,p {
   font-family: $font-sans-serif;
 }
 h1 {

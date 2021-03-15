@@ -6,7 +6,7 @@ import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
 
 // Query for the Blog Post content in Prismic
-export const query = graphql`
+export const studyquery = graphql`
   query StudyPostQuery($uid: String) {
     prismicStudy(uid: { eq: $uid }) {
       id
