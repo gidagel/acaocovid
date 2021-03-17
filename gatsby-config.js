@@ -40,8 +40,8 @@ const gastbySourcePrismicConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Ação COVID-19',
-    description: 'Blog example for Gatsby & Prismic',
+    title: 'Ação Covid-19',
+    description: 'Ação Covid-19 Website',
     author: '@gidagel',
   },
   plugins: [

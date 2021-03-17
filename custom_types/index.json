@@ -24,6 +24,12 @@
     "value": "publication.json"
   },
   {
+    "id": "news",
+    "name": "News",
+    "repeatable": true,
+    "value": "news.json"
+  },
+  {
     "id": "category",
     "name": "Category",
     "repeatable": true,

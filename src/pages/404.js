@@ -2,11 +2,13 @@ import * as React from 'react'
 import { withUnpublishedPreview } from 'gatsby-source-prismic'
 import { Post } from '../templates/post'
 import { Study } from '../templates/study'
+import { Publication } from '../templates/publication'
+import { News } from '../templates/news'
 import { Homepage } from './index'
 import Layout from '../components/layouts'
 import { BlogHomePage } from './blog/index'
 import { StudiesPage } from './estudos/index'
-import { PublicationsPage } from './publications/index'
+import { PublicationsPage } from './publicacoes/index'
 import { PressPage } from './press/index'
 
 const NotFoundPage = () => (
@@ -21,6 +23,8 @@ export default withUnpublishedPreview(NotFoundPage, {
     home: Homepage,
     post: Post,
     study: Study,
+    publication: Publication,
+    news: News,
     bloghome: BlogHomePage,
     studies: StudiesPage,
     publications: PublicationsPage,

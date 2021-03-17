@@ -14,7 +14,7 @@ const HeaderLinks = (props) => {
       <div className="header_links">
         <Link to='/simulator' key="simulator" onClick={handleClick}>Simulador</Link>
         <Link to='/estudos' key="studies" onClick={handleClick}>Estudos</Link>
-        <a href='/publications'>Publicações</a>
+        <a href='/publicacoes'>Publicações</a>
         <a href="/">
           <div className="logo">
             <img src={mainLogo} />

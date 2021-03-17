@@ -22,6 +22,24 @@ exports.createPages = async ({ graphql, actions }) => {
           url
         }
       }
+      allPrismicPublication {
+        nodes {
+          id
+          uid
+          lang
+          type
+          url
+        }
+      }
+      allPrismicNews {
+        nodes {
+          id
+          uid
+          lang
+          type
+          url
+        }
+      }
     }
   `)
 
@@ -37,6 +55,22 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: page.url,
       component: path.resolve(__dirname, 'src/templates/study.js'),
+      context: { ...page},
+    })
+  })
+
+  pages.data.allPrismicPublication.nodes.forEach((page) => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, 'src/templates/publication.js'),
+      context: { ...page},
+    })
+  })
+
+  pages.data.allPrismicNews.nodes.forEach((page) => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, 'src/templates/news.js'),
       context: { ...page},
     })
   })

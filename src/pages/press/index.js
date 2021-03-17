@@ -23,7 +23,7 @@ export const query = graphql`
       id
       type
     }
-    allPrismicPost(
+    allPrismicNews(
       sort: { fields: data___date, order: DESC }
       filter: {data: {categories: {elemMatch: {category: {tags: {eq: "imprensa"}}}}}}
       ) {
@@ -39,7 +39,7 @@ export const query = graphql`
             }
             date
             body {
-              ... on PrismicPostBodyText {
+              ... on PrismicNewsBodyText {
                 id
                 slice_label
                 slice_type
@@ -73,7 +73,7 @@ export const PressPage = ({ data }) => {
   if (!data) return null
   // Define the Blog Home & Blog Post content returned from Prismic
   const press = data.prismicPress.data
-  const posts = data.allPrismicPost.edges
+  const posts = data.allPrismicNews.edges
 
   return (
     <Layout>

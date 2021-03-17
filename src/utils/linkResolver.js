@@ -10,7 +10,10 @@ const linkResolver = (doc) => {
     return `/estudos/${doc.uid}`
   }
   if (doc.type === 'publication') {
-    return `/publications/${doc.uid}`
+    return `/publicacoes/${doc.uid}`
+  }
+  if (doc.type === 'news') {
+    return `/imprensa/${doc.uid}`
   }
   return '/'
 }
