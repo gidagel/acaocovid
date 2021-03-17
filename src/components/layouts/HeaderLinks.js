@@ -12,17 +12,17 @@ const HeaderLinks = (props) => {
 
     return (
       <div className="header_links">
-        <Link to='/simulator' key="simulator" onClick={handleClick}>Simulador</Link>
+        <Link to='/simulador' key="simulator" onClick={handleClick}>Simulador</Link>
         <Link to='/estudos' key="studies" onClick={handleClick}>Estudos</Link>
-        <a href='/publicacoes'>Publicações</a>
+        <Link to='/publicacoes' key="publications" onClick={handleClick}>Publicações</Link>
         <a href="/">
           <div className="logo">
             <img src={mainLogo} />
           </div>
         </a>
-        <a href='/blog'>Blog</a>
-        <Link to='/press' key="press" onClick={handleClick}>Imprensa</Link>
-        <a href='/press'>Sobre</a>
+        <Link to='/blog' key="blog" onClick={handleClick}>Blog</Link>
+        <Link to='/imprensa' key="press" onClick={handleClick}>Imprensa</Link>
+        <Link to='/sobre' key="about" onClick={handleClick}>Sobre</Link>
       </div>
     )
 }

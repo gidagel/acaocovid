@@ -9,7 +9,7 @@ import Layout from '../components/layouts'
 import { BlogHomePage } from './blog/index'
 import { StudiesPage } from './estudos/index'
 import { PublicationsPage } from './publicacoes/index'
-import { PressPage } from './press/index'
+import { PressPage } from './imprensa/index'
 
 const NotFoundPage = () => (
   <Layout>
