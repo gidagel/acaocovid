@@ -14,7 +14,7 @@ const HeaderSmall = () => {
           <div className="header_mobile">
             <div className="mobilelogo">
                 <a href="/">
-                    <img src={mainLogo} width="64" height="64" alt="Ação Covid-19 Logo Mobile" />
+                    <img src={mainLogo} alt="Ação Covid-19 Logo Mobile" />
                 </a>
             </div>
             <button 
