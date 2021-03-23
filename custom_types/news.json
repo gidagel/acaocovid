@@ -21,6 +21,14 @@
         "label": "Date"
       }
     },
+    "external_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "external_link",
+        "placeholder": "External Link"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
@@ -104,22 +112,24 @@
       }
     }
   },
- "Meta" : {
-    "categories" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "category" : {
-            "type" : "Link",
-            "config" : {
-              "select" : "document",
-              "customtypes" : [ "category" ],
-              "label" : "category",
-              "placeholder" : "Category"
+  "Meta": {
+    "categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "category": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "category"
+              ],
+              "label": "category",
+              "placeholder": "Category"
             }
           }
         },
-        "label" : "Categories"
+        "label": "Categories"
       }
     }
   }

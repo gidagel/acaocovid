@@ -61,10 +61,12 @@ export const query = graphql`
 const StudiesHead = ({ study }) => {
   const avatar = { backgroundImage: `url(${study.image.url})` }
   return (
-    <div className="studies-header" data-wio-id={study.id}>
-      <div className="studies-avatar" style={avatar} />
-      <h1>{study.headline.text}</h1>
-      <p className="studies-description">{study.description.text}</p>
+    <div className="home-header" data-wio-id={study.id}>
+      <div className="blog-avatar" style={avatar} />
+      <div className="blog-container-descript">
+        <h1>{study.headline.text}</h1>
+        <p className="blog-description">{study.description.text}</p>
+      </div>
     </div>
   )
 }

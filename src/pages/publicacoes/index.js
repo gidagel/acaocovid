@@ -59,10 +59,12 @@ export const query = graphql`
 const ArticleHead = ({ page }) => {
   const avatar = { backgroundImage: `url(${page.image.url})` }
   return (
-    <div className="home-header container" data-wio-id={page.id}>
+    <div className="home-header" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
-      <h1>{page.headline.text}</h1>
-      <p className="blog-description">{page.description.text}</p>
+      <div className="blog-container-descript">
+        <h1>{page.headline.text}</h1>
+        <p className="blog-description">{page.description.text}</p>
+      </div>
     </div>
   )
 }

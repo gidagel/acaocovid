@@ -1,6 +1,13 @@
 .blog-posts {
+  display: flex;
+  flex-direction: row;
+
   .post-summary {
     margin-bottom: 3rem;
+    background-color: $white;
+    max-width: 30%;
+    padding: 2em;
+    font-size: 14px;
 
     h2 {
       margin: 0;
@@ -13,6 +20,17 @@
       font-size: 16px;
       font-family: $font-sans-serif;
       color: #9A9A9A;
+    }
+  }
+}
+
+@media (max-width: $max-width-sm) {
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+  
+    .post-summary {
+      max-width: 100%;
     }
   }
 }

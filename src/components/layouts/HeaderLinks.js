@@ -12,17 +12,25 @@ const HeaderLinks = (props) => {
 
     return (
       <div className="header_links">
-        <Link to='/simulador' key="simulator" onClick={handleClick}>Simulador</Link>
-        <Link to='/estudos' key="studies" onClick={handleClick}>Estudos</Link>
-        <Link to='/publicacoes' key="publications" onClick={handleClick}>Publicações</Link>
-        <a href="/">
-          <div className="logo">
-            <img src={mainLogo} />
-          </div>
-        </a>
-        <Link to='/blog' key="blog" onClick={handleClick}>Blog</Link>
-        <Link to='/imprensa' key="press" onClick={handleClick}>Imprensa</Link>
-        <Link to='/sobre' key="about" onClick={handleClick}>Sobre</Link>
+        <div className="links_left">
+          <Link to='/simulador' key="simulator" onClick={handleClick}>Simulador</Link>
+          <Link to='/estudos' key="studies" onClick={handleClick}>Estudos</Link>
+          <Link to='/publicacoes' key="publications" onClick={handleClick}>Publicações</Link>
+          <Link to='/estatisticas' key="statistics" onClick={handleClick}>Estatísticas</Link>
+        </div>
+        <div className="logo">
+          <a href="/">
+            <div className="logo">
+              <img src={mainLogo} />
+            </div>
+          </a>
+        </div>
+        <div className="links_right">  
+          <Link to='/blog' key="blog" onClick={handleClick}>Blog</Link>
+          <Link to='/imprensa' key="press" onClick={handleClick}>Imprensa</Link>
+          <Link to='/sobre' key="about" onClick={handleClick}>Sobre Nós</Link>
+          <Link to='/parceiros' key="partners" onClick={handleClick}>Parceiros</Link>          
+        </div>
       </div>
     )
 }

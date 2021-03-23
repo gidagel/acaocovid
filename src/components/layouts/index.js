@@ -43,7 +43,9 @@ const Layout = ({ data, children }) => {
       </Helmet>
       <Header />
       <HeaderSmall />
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
       <Footer />
     </>
   )

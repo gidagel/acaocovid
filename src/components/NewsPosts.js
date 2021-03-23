@@ -24,9 +24,9 @@ const firstParagraph = (post) => {
   // If there are no slices of type 'text', return nothing
   return null
 }
-
 // A summary of the Blog Post
 const PostSummary = ({ post, id }) => {
+  
   // Store and format the blog post's publication date
   let postDate = Date(post.node.data.date)
   postDate = postDate
@@ -44,18 +44,17 @@ const PostSummary = ({ post, id }) => {
       <h2>
         {/* We render a link to a particular post
          * using the linkResolver for the url and its title */}
-        <Link to={post.node.url}>
+        <a href={post.node.data.external_link.url} target="_blank">
           {RichText.asText(post.node.data.title.raw).length !== 0
             ? RichText.asText(post.node.data.title.raw)
             : defaultTitle}
-        </Link>
+        </a>
       </h2>
       <p className="blog-post-meta">
         <time>{postDate}</time>
       </p>
-      {/* Renders a small preview of the post's text */}
       {firstParagraph(post.node.data)}
-      <button><Link to={post.node.url}>Ver mais</Link></button>
+      <button><a href={post.node.data.external_link.url} target="_blank">Ver mais</a></button>
     </div>
   )
 }

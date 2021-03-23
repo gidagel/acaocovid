@@ -19,6 +19,9 @@ export const newsquery = graphql`
         title {
           raw
         }
+        external_link {
+          url
+        }
         body {
           ... on PrismicNewsBodyText {
             slice_label

@@ -2,7 +2,7 @@ import React, {Text} from 'react'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import Layout from '../../components/layouts'
-import BlogPosts from '../../components/BlogPosts'
+import NewsPosts from '../../components/NewsPosts'
 import { withPreview } from 'gatsby-source-prismic'
 
 // Query for the Blog Home content in Prismic
@@ -38,6 +38,9 @@ export const query = graphql`
               raw
             }
             date
+            external_link {
+              url
+            }
             body {
               ... on PrismicNewsBodyText {
                 id
@@ -61,10 +64,12 @@ export const query = graphql`
 const BlogHomeHead = ({ page }) => {
   const avatar = { backgroundImage: `url(${page.image.url})` }
   return (
-    <div className="home-header" data-wio-id={page.id}>
+    <div className="home-header clean" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
-      <h1>{page.headline.text}</h1>
-      <p className="blog-description">{page.description.text}</p>
+      <div className="blog-container-descript">
+        <h1>{page.headline.text}</h1>
+        <p className="blog-description">{page.description.text}</p>
+      </div>
     </div>
   )
 }
@@ -78,7 +83,7 @@ export const PressPage = ({ data }) => {
   return (
     <Layout>
       <BlogHomeHead page={press} />
-      <BlogPosts posts={posts} />
+      <NewsPosts posts={posts} />
     </Layout>
   )
 }
