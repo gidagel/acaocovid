@@ -29,15 +29,16 @@ const Layout = ({ data, children }) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang : "pt-br" }}>
         <meta charSet="utf-8" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="all" />
         <link 
           rel="preconnect" 
           href="https://fonts.gstatic.com" />
         <link 
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100;1,300;1,400;1,700;1,900&display=swap" 
           rel="stylesheet"
         />
       </Helmet>

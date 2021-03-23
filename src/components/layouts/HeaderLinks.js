@@ -19,9 +19,9 @@ const HeaderLinks = (props) => {
           <Link to='/estatisticas' key="statistics" onClick={handleClick}>Estatísticas</Link>
         </div>
         <div className="logo">
-          <a href="/">
+          <a href="/" aria-label="Ação Covid-19 Home">
             <div className="logo">
-              <img src={mainLogo} />
+              <img src={mainLogo} width="256" height="256" alt="Ação Covid-19 Logo Principal"/>
             </div>
           </a>
         </div>

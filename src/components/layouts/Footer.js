@@ -3,6 +3,9 @@ import React from 'react'
 export default () => (
   <footer>
     <div className="container">
+      <div className="partners">
+        
+      </div>
       <div className="footer_container">
         <div className="footer_about">
           <h3>Quem somos</h3>
@@ -17,20 +20,20 @@ export default () => (
           <li><a href="mailto:comunicamosaico@gmail.com">comunicamosaico@gmail.com</a></li>
         </div>
         <div className="footer_links">
-          <div className="footer_links_left">
+          <ul className="footer_links_left">
             <h3>Nosso projeto</h3>
             <li>Simulador</li>
             <li>Estudos</li>
             <li>Publicações</li>
             <li>Estatísticas</li>
-          </div>
-          <div className="footer_links_right">
+          </ul>
+          <ul className="footer_links_right">
             <h3>Informações</h3>
             <li>Blog</li>
             <li>Imprensa</li>
             <li>Sobre</li>
             <li>Parceiros</li>
-          </div>
+          </ul>
         </div>
       </div>
     </div>
