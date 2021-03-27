@@ -19,6 +19,9 @@ export const publicationquery = graphql`
         title {
           raw
         }
+        article_files {
+          url
+        }
         body {
           ... on PrismicPublicationBodyText {
             slice_label
@@ -96,14 +99,16 @@ const PostBody = ({ publicationPost }) => {
     <div>
       <div className="container post-header">
         <div className="back">
-          <Link to="/">Voltar</Link>
+          <Link to="/publicacoes">Voltar</Link>
         </div>
         <h1>
           {RichText.asText(publicationPost.title.raw).length !== 0
             ? RichText.asText(publicationPost.title.raw)
             : 'Untitled'}
         </h1>
+        <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
       </div>
+      <br/>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={publicationPost.body} />
     </div>

@@ -20,8 +20,8 @@
       "type": "Image",
       "config": {
         "constraint": {
-          "width": 140,
-          "height": 140
+          "width": 1920,
+          "height": 1080
         },
         "thumbnails": [],
         "label": "Image"
