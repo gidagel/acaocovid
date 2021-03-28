@@ -25,7 +25,7 @@
   }
 }
 
-@media (max-width: $max-width-sm) {
+  @media (max-width: $max-width-sm) {
   .blog-posts {
     display: flex;
     flex-direction: column;
