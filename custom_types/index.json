@@ -1,9 +1,9 @@
 [
   {
-    "id": "bloghome",
-    "name": "Bloghome",
+    "id": "homeblog",
+    "name": "HomeBlog",
     "repeatable": false,
-    "value": "bloghome.json"
+    "value": "homeblog.json"
   },
   {
     "id": "post",

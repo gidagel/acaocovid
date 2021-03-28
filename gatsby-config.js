@@ -7,7 +7,7 @@ const linkResolver = require('./src/utils/linkResolver')
 const reponame = process.env.PRISMIC_REPO_NAME || prismicRepo
 const apiKey = process.env.PRISMIC_API_KEY || accessToken
 
-const blogHomeSchema = require('./custom_types/bloghome.json')
+const homeblogSchema = require('./custom_types/homeblog.json')
 const postSchema = require('./custom_types/post.json')
 const categorySchema = require('./custom_types/category.json')
 const pressSchema = require('./custom_types/press.json')
@@ -25,7 +25,7 @@ const gastbySourcePrismicConfig = {
     prismicToolbar: true,
     linkResolver: () => (doc) => linkResolver(doc),
     schemas: {
-      blogHome: blogHomeSchema,
+      homeblog: homeblogSchema,
       post: postSchema,
       category: categorySchema,
       press: pressSchema,
@@ -33,7 +33,11 @@ const gastbySourcePrismicConfig = {
       studies: studiesSchema,
       study: studySchema,
       publication: publicationSchema,
-      news: newsSchema
+      news: newsSchema,
+    },
+    shouldDownloadImage: ({ node, key, value }) => {
+      // Return true to download the image or false to skip.
+      return true
     },
   },
 }
@@ -67,13 +71,6 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'MyNodes',
-        imagePath: 'path.to.image',
       },
     },
   ],

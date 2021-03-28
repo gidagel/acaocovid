@@ -25,7 +25,7 @@ export default withUnpublishedPreview(NotFoundPage, {
     study: Study,
     publication: Publication,
     news: News,
-    bloghome: BlogHomePage,
+    homeblog: BlogHomePage,
     studies: StudiesPage,
     publications: PublicationsPage,
     press: PressPage

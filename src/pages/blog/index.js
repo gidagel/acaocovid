@@ -8,7 +8,7 @@ import { withPreview } from 'gatsby-source-prismic'
 // Query for the Blog Home content in Prismic
 export const query = graphql`
   query {
-    prismicBloghome {
+    prismicHomeblog {
       data {
         description {
           text
@@ -17,7 +17,9 @@ export const query = graphql`
           text
         }
         image {
-          url
+          localFile {
+            publicURL
+          }
         }
       }
       id
@@ -59,7 +61,8 @@ export const query = graphql`
 
 // Using the queried Blog Home document data, we render the top section
 const BlogHomeHead = ({ page }) => {
-  const avatar = { backgroundImage: `url(${page.image.url})` }
+  const bgImage = page.image.localFile.publicURL
+  const avatar = { backgroundImage: `url(${bgImage})` }
   return (
     <div className="home-header" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
@@ -76,12 +79,12 @@ const BlogHomeHead = ({ page }) => {
 export const BlogHomePage = ({ data }) => {
   if (!data) return null
   // Define the Blog Home & Blog Post content returned from Prismic
-  const bloghome = data.prismicBloghome.data
+  const homeblog = data.prismicHomeblog.data
   const posts = data.allPrismicPost.edges
 
   return (
     <Layout>
-      <BlogHomeHead page={bloghome} />
+      <BlogHomeHead page={homeblog} />
       <BlogPosts posts={posts} />
     </Layout>
   )

@@ -17,7 +17,9 @@ export const query = graphql`
           text
         }
         image {
-          url
+          localFile {
+            publicURL
+          }
         }
       }
       id
@@ -59,7 +61,8 @@ export const query = graphql`
 
 // Using the queried Blog Home document data, we render the top section
 const StudiesHead = ({ study }) => {
-  const avatar = { backgroundImage: `url(${study.image.url})`, backgroundPosition: '50% 30%' }
+  const bgImage = page.image.localFile.publicURL
+  const avatar = { backgroundImage: `url(${bgImage})`, backgroundPosition: '50% 30%' }
   return (
     <div className="home-header" data-wio-id={study.id}>
       <div className="blog-avatar" style={avatar} />
