@@ -1,17 +1,18 @@
 .blog-posts {
   display: flex;
   flex-direction: row;
+  margin: 0 1em;
 
   .post-summary {
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
     background-color: $white;
     max-width: 30%;
     padding: 2em;
     font-size: 14px;
 
-    h2 {
+    h2 a{
       margin: 0;
-      color: #353535;
+      color: $brand-color;
       text-align: left;
     }
 
@@ -28,9 +29,12 @@
   .blog-posts {
     display: flex;
     flex-direction: column;
+    margin: 0;
   
     .post-summary {
       max-width: 100%;
+      padding: 2em;
+      margin-bottom: 1.5em;
     }
   }
 }

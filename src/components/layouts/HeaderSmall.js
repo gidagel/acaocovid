@@ -26,7 +26,8 @@ const HeaderSmall = () => {
           </div>
           {toggleMenu 
               ? <HeaderLinks handleToggle={handleToggle}/>
-                  : ""}
+              : ""
+          }
       </nav>
   )
 }

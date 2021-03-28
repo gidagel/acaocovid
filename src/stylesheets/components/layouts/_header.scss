@@ -1,5 +1,6 @@
 header {
   background-color: #ffffff;
+  max-width: 100%;
 }
 
 .logo {
@@ -28,7 +29,14 @@ header {
 }
 
 .links_left > *, .links_right > * {
-  color: $brand-color;
+  color: $offBlack;
+}
+.links_left > *:hover, .links_right > *:hover {
+  color: $secondary;
+}
+
+.active {
+  color: $secondary;
 }
 
 .links_right {
@@ -63,15 +71,20 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin: 1em 0 1em 0;
+    height: 100%;
   }
+
 
   .header_small{
     display: block;
     background-color: $white;
     position: absolute;
     z-index: 2;
-  }
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.08),
+              0 3px 14px 2px rgba(0, 0, 0, 0.06),
+              0 5px 5px -3px rgba(0, 0, 0, 0.05);
+    }
 
   .header_mobile {
     display: flex;
@@ -80,23 +93,30 @@ header {
   }
 
   .links_left {
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   .links_right {
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   .links_left > *,.links_right > * {
-    margin: 0.5em 0;
+    padding: 1em;
+    width: 80%;
+    border-bottom: 1px solid #ccc;
+  }
+  .links_right > *:last-child {
+    border-bottom: 0;
   }
 
   .logo {

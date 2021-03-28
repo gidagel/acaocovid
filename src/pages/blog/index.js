@@ -63,9 +63,11 @@ const BlogHomeHead = ({ page }) => {
   return (
     <div className="home-header" data-wio-id={page.id}>
       <div className="blog-avatar" style={avatar} />
-      <div className="blog-container-descript">
-        <h1>{RichText.asText(page.headline)}</h1>
-        <p className="blog-description">{RichText.asText(page.description)}</p>
+      <div className="container">
+        <div className="blog-container-descript">
+          <h1>{RichText.asText(page.headline)}</h1>
+          <p className="blog-description">{RichText.asText(page.description)}</p>
+        </div>
       </div>
     </div>
   )

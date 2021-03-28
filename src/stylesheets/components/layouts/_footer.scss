@@ -13,10 +13,11 @@ footer h3 {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0.5em 0;
 }
 
 .footer_about {
-  max-width: 20%;
+  max-width: 26%;
 }
 
 .footer_contact {
@@ -37,6 +38,11 @@ li {
   list-style-type: none;
 }
 
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 .footer_links li {
   margin: 0.5em 0;
 }
@@ -48,6 +54,7 @@ footer p {
 @media (max-width: $max-width-sm) {
   footer {
     padding: 0;
+    width: 100%;
   }
   
   .footer_container {
@@ -55,7 +62,7 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2em 0;
+    padding: 2em 1em;
   }
 
   .footer_about {

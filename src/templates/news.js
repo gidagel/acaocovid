@@ -99,7 +99,7 @@ const PostBody = ({ newsPost }) => {
     <div>
       <div className="container post-header">
         <div className="back">
-          <Link to="/">back to list</Link>
+          <Link to="/imprensa">Voltar</Link>
         </div>
         <h1>
           {RichText.asText(newsPost.title.raw).length !== 0

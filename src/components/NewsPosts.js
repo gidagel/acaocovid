@@ -54,7 +54,7 @@ const PostSummary = ({ post, id }) => {
         <time>{postDate}</time>
       </p>
       {firstParagraph(post.node.data)}
-      <button><a href={post.node.data.external_link.url} target="_blank">Ver mais</a></button>
+      <button><a href={post.node.data.external_link.url} target="_blank">Ver Notícia</a></button>
     </div>
   )
 }

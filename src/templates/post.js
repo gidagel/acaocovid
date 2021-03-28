@@ -96,7 +96,7 @@ const PostBody = ({ blogPost }) => {
     <div>
       <div className="container post-header">
         <div className="back">
-          <Link to="/">Voltar</Link>
+          <Link to="/blog">Voltar</Link>
         </div>
         <h1>
           {RichText.asText(blogPost.title.raw).length !== 0
