@@ -5,14 +5,15 @@
   height: 16em;
   width: 100%;
   background-color: black;
-
-  .blog-avatar img{
-    max-height: 16em;
+  
+  .blog-header {
     width: 100%;
-    object-position: bottom;
-    object-fit: cover;
-    margin: 0 auto;
-    opacity: 50%;
+    overflow: hidden;
+    height: 16em;
+  }
+
+  .blog-avatar {
+    height: 16em;
   }
 
   .blog-container-descript {
@@ -49,11 +50,13 @@
     height: 20em;
     margin-bottom: 1em;
 
-    .blog-avatar img {
+    .blog-header {
       object-fit: cover;
-      min-height: 20em;
+      height: 20em;
     }
-
+    .blog-avatar {
+      height: 20em;
+    }
     .blog-container-descript {
       max-width: 100%;
       left: 0;

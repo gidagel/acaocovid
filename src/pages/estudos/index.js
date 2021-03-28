@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import Img from "gatsby-image"
 import Layout from '../../components/layouts'
 import BlogPosts from '../../components/BlogPosts'
 import { withPreview } from 'gatsby-source-prismic'
@@ -17,8 +17,9 @@ export const query = graphql`
           text
         }
         image {
-          localFile {
-            publicURL
+          alt
+          fluid {
+            ...GatsbyPrismicImageFluid
           }
         }
       }
@@ -61,11 +62,10 @@ export const query = graphql`
 
 // Using the queried Blog Home document data, we render the top section
 const StudiesHead = ({ study }) => {
-  const bgImage = study.image.localFile.publicURL
   return (
     <div className="home-header" data-wio-id={study.id}>
-      <div className="blog-avatar">
-      <img src={bgImage} style={{objectPosition: '50% 30%'}} alt={study.image.alt} />
+      <div className="blog-header">
+      <Img fluid={study.image.fluid} className="blog-avatar" imgStyle={{maxHeight: '100%', objectFit: 'cover', width: '100%', opacity: '0.5', objectPosition: '50% 30%'}} alt={study.image.alt} />
       </div>
       <div className="container">
         <div className="blog-container-descript">

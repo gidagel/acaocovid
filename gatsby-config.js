@@ -34,11 +34,7 @@ const gastbySourcePrismicConfig = {
       study: studySchema,
       publication: publicationSchema,
       news: newsSchema,
-    },
-    shouldDownloadImage: ({ node, key, value }) => {
-      // Return true to download the image or false to skip.
-      return true
-    },
+    }
   },
 }
 
@@ -64,8 +60,8 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
