@@ -6,11 +6,11 @@
   width: 100%;
   background-color: black;
 
-  .blog-avatar {
-    min-height: 100%;
+  .blog-avatar img{
+    max-height: 16em;
     width: 100%;
-    background-position: bottom;
-    background-size: cover;
+    object-position: bottom;
+    object-fit: cover;
     margin: 0 auto;
     opacity: 50%;
   }
@@ -49,8 +49,9 @@
     height: 20em;
     margin-bottom: 1em;
 
-    .blog-avatar {
-      background-position-x: 50%;
+    .blog-avatar img {
+      object-fit: cover;
+      min-height: 20em;
     }
 
     .blog-container-descript {

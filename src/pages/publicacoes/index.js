@@ -59,10 +59,11 @@ export const query = graphql`
 // Using the queried Blog Home document data, we render the top section
 const ArticleHead = ({ page }) => {
   const bgImage = page.image.localFile.publicURL
-  const avatar = { backgroundImage: `url(${bgImage})`, backgroundPosition: '70% 70%' }
   return (
     <div className="home-header" data-wio-id={page.id}>
-      <div className="blog-avatar" style={avatar} />
+      <div className="blog-avatar">
+      <img src={bgImage} alt={page.image.alt} style={{objectPosition: '70% 70%'}} />
+      </div>
       <div className="container">
         <div className="blog-container-descript">
           <h1>{page.headline.text}</h1>
