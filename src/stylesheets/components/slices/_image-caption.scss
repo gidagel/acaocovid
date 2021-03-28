@@ -4,14 +4,20 @@
 
     img {
       width: 100%;
-      height: auto;
+      height: 20em;
+      object-fit: cover;
+    }
+    @media screen and (max-width: $min-width-sm) {
+      img {
+        height: 15em;
+      }
     }
   }
 
   .emphasized {
-    @media screen and (min-width: $min-width-emph) {
-      width: 130%;
-      margin: 0 -15% 2rem -15%;
+    @media screen and (max-width: $min-width-sm) {
+      width: 100%;
+      margin: 0;
     }
   }
 
@@ -19,8 +25,9 @@
     display: block;
     text-align: center;
     font-style: italic;
-    font-size: 14px;
-    color: #949494;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+    color: $offBlack;
   }
 }
 

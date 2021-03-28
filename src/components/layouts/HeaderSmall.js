@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import HeaderLinks from './HeaderLinks'
 import mainLogo from '../../images/main_logo.jpg'
+import { MenuIcon } from '../Icons'
 
 const HeaderSmall = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -21,7 +22,7 @@ const HeaderSmall = () => {
                 className="header_small_button" 
                 onClick={handleToggle}
             >
-                Menu
+                <MenuIcon />
             </button>
           </div>
           {toggleMenu 

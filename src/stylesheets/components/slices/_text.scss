@@ -1,5 +1,6 @@
 
 .post-text {
+  padding: 0 1em;
   a {
     text-decoration: none;
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
@@ -17,5 +18,11 @@
     a {
       background: none;
     }
+  }
+}
+
+@media (max-width: $max-width-sm) {
+  .post-text {
+    padding: 0;
   }
 }

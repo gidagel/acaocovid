@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
+import { BackIcon } from '../components/Icons'
 
 // Query for the News single-type content in Prismic
 export const newsquery = graphql`
@@ -96,10 +97,12 @@ const PostSlices = ({ slices }) =>
 // Display the title, date, and content of the Post
 const PostBody = ({ newsPost }) => {
   return (
-    <div>
-      <div className="container post-header">
+    <div className="container">
+      <div className="post-header">
         <div className="back">
-          <Link to="/imprensa">Voltar</Link>
+          <Link to="/imprensa" >
+            <BackIcon style={{width: '24px', height: '24px'}} /> 
+          </Link>
         </div>
         <h1>
           {RichText.asText(newsPost.title.raw).length !== 0

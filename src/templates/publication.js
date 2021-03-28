@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
+import { BackIcon, Doc } from '../components/Icons'
 
 // Query for the Blog Post content in Prismic
 export const publicationquery = graphql`
@@ -96,21 +97,33 @@ const PostSlices = ({ slices }) =>
 // Display the title, date, and content of the Post
 const PostBody = ({ publicationPost }) => {
   return (
-    <div>
-      <div className="container post-header">
+    <div className="container">
+      <div className="post-header">
         <div className="back">
-          <Link to="/publicacoes">Voltar</Link>
+          <Link to="/">
+            <p>Home</p>
+          </Link>
+          <p>/</p>
+          <Link to="/publicacoes">
+            <p>Publicações</p>
+          </Link>
+          <p>/</p>
+          <p>Você está aqui</p>
         </div>
         <h1>
           {RichText.asText(publicationPost.title.raw).length !== 0
             ? RichText.asText(publicationPost.title.raw)
             : 'Untitled'}
         </h1>
-        <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
+        <div className='pdf-view'>
+          <Doc />
+          <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
+        </div>
       </div>
-      <br/>
       {/* Go through the slices of the post and render the appropiate one */}
-      <PostSlices slices={publicationPost.body} />
+      <div className='post-body'>
+        <PostSlices slices={publicationPost.body} />
+      </div>
     </div>
   )
 }

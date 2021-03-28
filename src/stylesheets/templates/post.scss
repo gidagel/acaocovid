@@ -1,32 +1,66 @@
 
 .post-header {
-  padding: 1em 1em 0 1em;
+  max-width: 70%;
+  margin: 4em auto 0 auto;
+
+  h1 {
+    color: $brand-color;
+  }
+
+  .pdf-view {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 1em 0;
+  
+    a {
+      width: 8em;
+    }
+  }
 
   .back {
-    color: #9A9A9A;
-    display: block;
-    margin: 0m auto 2em auto;
+    display: flex;
+    flex-direction: row;
+    margin: 1em auto 1em auto;
     font-family: $font-sans-serif;
-    font-size: 16px;
-
-    &:before {
-      content: '←';
-      display: inline-block;
-      position: relative;
-      margin-right: 8px;
-    }
+    font-size: 0.7em;
+    max-width: 100%;
 
     a {
-      color: #9A9A9A;
-
       &:hover {
         text-decoration: underline;
       }
     }
+    p {
+      margin-left: 0.2em;
+      margin-bottom: 0;
+    }
   }
 }
+.post-body {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: 0 auto 4em auto;
+  justify-content: center;
+}
+
 @media (max-width: $max-width-sm) {
   .post-header {
-    padding: 5em 1em 0 1em;
+    padding: 5em 0em 0 0em;
+    margin: 0;
+    max-width: 100%;
+    .back {
+      a, p {
+        font-size: 1em;
+      }
+    }
+  }
+  .post-body {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+  }
+  .pdf-view {
+    padding: 1em 0;
   }
 }
