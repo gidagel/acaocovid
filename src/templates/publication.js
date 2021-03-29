@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
-import { BackIcon, Doc } from '../components/Icons'
+import { Doc } from '../components/Icons'
 
 // Query for the Blog Post content in Prismic
 export const publicationquery = graphql`
@@ -115,10 +115,12 @@ const PostBody = ({ publicationPost }) => {
             ? RichText.asText(publicationPost.title.raw)
             : 'Untitled'}
         </h1>
+        {publicationPost.article_files.url &&
         <div className='pdf-view'>
           <Doc />
-          <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
+             <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
         </div>
+        } 
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <div className='post-body'>

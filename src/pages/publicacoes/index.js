@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../../components/layouts'
-import BlogPosts from '../../components/BlogPosts'
+import PublicationsPosts from '../../components/PublicationsPosts'
 import { withPreview } from 'gatsby-source-prismic'
 
 // Query for the Blog Home content in Prismic
@@ -50,6 +50,23 @@ export const query = graphql`
                   }
                 }
               }
+              ... on PrismicPublicationBodyImageWithCaption {
+                id
+                slice_label
+                slice_type
+                primary {
+                  image {
+                    alt
+                    url
+                    fluid {
+                      ...GatsbyPrismicImageFluid
+                    }
+                  }
+                  caption {
+                    raw
+                  }
+                }
+              }
             }
           }
         }
@@ -84,7 +101,7 @@ export const PublicationsPage = ({ data }) => {
   return (
     <Layout>
       <ArticleHead page={article} />
-      <BlogPosts posts={posts} />
+      <PublicationsPosts posts={posts} />
     </Layout>
   )
 }

@@ -21,6 +21,7 @@ const HeaderSmall = () => {
             <button 
                 className="header_small_button" 
                 onClick={handleToggle}
+                aria-label="Menu Button Icon"
             >
                 <MenuIcon />
             </button>
