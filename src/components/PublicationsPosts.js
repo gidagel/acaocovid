@@ -10,7 +10,7 @@ const firstImage = (post) => {
     const imgFluid = firstImgSlice.primary.image.fluid
     const altImg = firstImgSlice.primary.image.alt
     return (
-      <Img fluid={imgFluid} alt={altImg} className="round-preview" imgStyle={{width: '100%', height: '15em', objectFit: 'cover', objectPosition: 'bottom'}} />
+      <Img fluid={imgFluid} alt={altImg} className="round-preview" imgStyle={{width: '22em', height: '15em', objectFit: 'cover', objectPosition: 'bottom'}} />
     )
   }
 }
