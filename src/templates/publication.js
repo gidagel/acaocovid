@@ -5,6 +5,7 @@ import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
 import { Doc } from '../components/Icons'
+import SEO from '../components/SEO'
 
 // Query for the Blog Post content in Prismic
 export const publicationquery = graphql`
@@ -17,12 +18,14 @@ export const publicationquery = graphql`
       url
       data {
         date
+        type
         title {
           raw
         }
         article_files {
           url
         }
+
         body {
           ... on PrismicPublicationBodyText {
             slice_label
@@ -95,45 +98,73 @@ const PostSlices = ({ slices }) =>
   })
 
 // Display the title, date, and content of the Post
-const PostBody = ({ publicationPost }) => {
+const PostBody = ({ publicationPost, props }) => {
+  
+  const firstParagraph = (publicationPost) => { 
+  const imgSlice = publicationPost.body.find((slice) => slice.slice_type === 'image_with_caption')
+  if (imgSlice != null) {
+    const description = RichText.asText(imgSlice.primary.caption.raw)
+  
+      return description
+    }
+  }
+
+  const firstImg = (publicationPost) => { 
+    const imgSlice = publicationPost.body.find((slice) => slice.slice_type === 'image_with_caption')
+    if (imgSlice != null) {
+      const imgUrl = imgSlice.primary.image.url
+    
+        return imgUrl
+      }
+    }
   return (
-    <div className="container">
-      <div className="post-header">
-        <div className="back">
-          <Link to="/">
-            <p>Home</p>
-          </Link>
-          <p>/</p>
-          <Link to="/publicacoes">
-            <p>Publicações</p>
-          </Link>
-          <p>/</p>
-          <p>Você está aqui</p>
+    <article {...props}>
+      <SEO
+        post={{
+          image: firstImg(publicationPost.data) || false,
+          title: publicationPost.data.title.raw,
+          url: publicationPost.url,
+          description: firstParagraph(publicationPost.data)
+        }}
+      />
+      <div className="container">
+        <div className="post-header">
+          <div className="back">
+            <Link to="/">
+              <p>Home</p>
+            </Link>
+            <p>/</p>
+            <Link to="/publicacoes">
+              <p>Publicações</p>
+            </Link>
+            <p>/</p>
+            <p>Você está aqui</p>
+          </div>
+          <h1>
+            {RichText.asText(publicationPost.data.title.raw).length !== 0
+              ? RichText.asText(publicationPost.data.title.raw)
+              : 'Untitled'}
+          </h1>
+          {publicationPost.data.article_files.url &&
+          <div className='pdf-view'>
+            <Doc />
+            <a href={publicationPost.data.article_files.url} target="_blank">Ver PDF completo</a> 
+          </div>
+          } 
         </div>
-        <h1>
-          {RichText.asText(publicationPost.title.raw).length !== 0
-            ? RichText.asText(publicationPost.title.raw)
-            : 'Untitled'}
-        </h1>
-        {publicationPost.article_files.url &&
-        <div className='pdf-view'>
-          <Doc />
-             <a href={publicationPost.article_files.url} target="_blank">Ver PDF completo</a> 
+        {/* Go through the slices of the post and render the appropiate one */}
+        <div className='post-body'>
+          <PostSlices slices={publicationPost.data.body} />
         </div>
-        } 
       </div>
-      {/* Go through the slices of the post and render the appropiate one */}
-      <div className='post-body'>
-        <PostSlices slices={publicationPost.body} />
-      </div>
-    </div>
+    </article>
   )
 }
 
 export const Publication = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
-  const publication = data.prismicPublication.data
+  const publication = data.prismicPublication
 
   return (
     <Layout>

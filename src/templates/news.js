@@ -1,10 +1,8 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
-import { ImageCaption, Quote, Text } from '../components/slices'
-import { BackIcon } from '../components/Icons'
 
 // Query for the News single-type content in Prismic
 export const newsquery = graphql`
@@ -23,87 +21,15 @@ export const newsquery = graphql`
         external_link {
           url
         }
-        body {
-          ... on PrismicNewsBodyText {
-            slice_label
-            slice_type
-            primary {
-              text {
-                raw
-              }
-            }
-          }
-          ... on PrismicNewsBodyQuote {
-            slice_label
-            slice_type
-            primary {
-              quote {
-                raw
-              }
-            }
-          }
-          ... on PrismicNewsBodyImageWithCaption {
-            id
-            slice_label
-            slice_type
-            primary {
-              image {
-                alt
-                url
-              }
-              caption {
-                raw
-              }
-            }
-          }
-        }
       }
     }
   }
 `
 
-// Sort and display the different slice options
-const PostSlices = ({ slices }) =>
-  slices.map((slice, index) => {
-    const res = (() => {
-      switch (slice.slice_type) {
-        case 'text':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <Text slice={slice} />
-            </div>
-          )
-
-        case 'quote':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <Quote slice={slice} />
-            </div>
-          )
-
-        case 'image_with_caption':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <ImageCaption slice={slice} />
-            </div>
-          )
-
-        default:
-      }
-    })()
-    return res
-  })
-
-// Display the title, date, and content of the Post
 const PostBody = ({ newsPost }) => {
   return (
     <div className="container">
       <div className="post-header">
-        <div className="back">
-          <Link to="/imprensa" >
-            <BackIcon style={{width: '24px', height: '24px'}} /> 
-          </Link>
-        </div>
         <h1>
           {RichText.asText(newsPost.title.raw).length !== 0
             ? RichText.asText(newsPost.title.raw)

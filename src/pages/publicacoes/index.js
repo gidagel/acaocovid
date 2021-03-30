@@ -38,6 +38,7 @@ export const query = graphql`
             title {
               raw
             }
+            type
             date
             body {
               ... on PrismicPublicationBodyText {
@@ -80,7 +81,18 @@ const ArticleHead = ({ page }) => {
   return (
     <div className="home-header" data-wio-id={page.id}>
       <div className="blog-header">
-        <Img fluid={page.image.fluid} className="blog-avatar" imgStyle={{maxHeight: '100%', objectFit: 'cover', width: '100%', opacity: '0.5', objectPosition: 'top'}} alt={page.image.alt} />
+        <Img 
+          fluid={page.image.fluid} 
+          className="blog-avatar" 
+          imgStyle={{
+            maxHeight: '100%', 
+            objectFit: 'cover', 
+            width: '100%', 
+            opacity: '0.3', 
+            objectPosition: 'top'
+          }} 
+          alt={page.image.alt} 
+        />
       </div>
       <div className="container">
         <div className="blog-container-descript">

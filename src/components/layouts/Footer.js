@@ -25,11 +25,11 @@ export default () => (
             <li><a href="mailto:comunicamosaico@gmail.com">comunicamosaico@gmail.com</a></li>
           </ul>
           <div className="social-icons">
-            <a href=""><SpotifyIcon /></a>
-            <a href=""><InstagramIcon /></a>
-            <a href=""><FacebookIcon /></a>
-            <a href=""><TwitterIcon /></a>
-            <a href=""><YouTubeIcon /></a>
+            <a href="https://anchor.fm/acaocovid19" target="_blank"><SpotifyIcon /></a>
+            <a href="https://www.instagram.com/acao_covid/" target="_blank"><InstagramIcon /></a>
+            <a href="https://www.facebook.com/AcaoCovid19" target="_blank"><FacebookIcon /></a>
+            <a href="https://twitter.com/AcaoCovid" target="_blank"><TwitterIcon /></a>
+            <a href="https://www.youtube.com/c/AcaoCovid19" target="_blank"><YouTubeIcon /></a>
           </div>
         </div>
         <div className="footer_links">
@@ -39,7 +39,6 @@ export default () => (
               <li><Link to="/simulador">Simulador</Link></li>
               <li><Link to="/estudos">Estudos</Link></li>
               <li><Link to="/publicacoes">Publicações</Link></li>
-              <li><Link to="/estatisticas">Estatísticas</Link></li>
             </ul>
           </div>
           <div className="footer_links_right">
@@ -48,7 +47,6 @@ export default () => (
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/imprensa">Imprensa</Link></li>
               <li><Link to="/sobre">Sobre</Link></li>
-              <li><Link to="/parceiros">Parceiros</Link></li>
             </ul>
           </div>
         </div>

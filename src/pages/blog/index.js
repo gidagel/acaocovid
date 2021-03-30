@@ -41,6 +41,13 @@ export const query = graphql`
               raw
             }
             date
+            main_image {
+              url
+              alt
+              fluid {
+                src
+              }
+            }
             body {
               ... on PrismicPostBodyText {
                 id
@@ -48,6 +55,23 @@ export const query = graphql`
                 slice_type
                 primary {
                   text {
+                    raw
+                  }
+                }
+              }
+              ... on PrismicPostBodyImageWithCaption {
+                id
+                slice_label
+                slice_type
+                primary {
+                  image {
+                    alt
+                    url
+                    fluid {
+                      ...GatsbyPrismicImageFluid
+                    }
+                  }
+                  caption {
                     raw
                   }
                 }

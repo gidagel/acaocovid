@@ -10,7 +10,20 @@ const firstImage = (post) => {
     const imgFluid = firstImgSlice.primary.image.fluid
     const altImg = firstImgSlice.primary.image.alt
     return (
-      <Img fluid={imgFluid} alt={altImg} className="round-preview" imgStyle={{width: '22em', height: '15em', objectFit: 'cover', objectPosition: 'bottom'}} />
+      <Img 
+        fluid={imgFluid} 
+        alt={altImg} 
+        className="img-preview" 
+        style={{
+          zIndex: '0'
+        }}
+        imgStyle={{
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover', 
+          objectPosition: 'center'
+        }} 
+      />
     )
   }
 }
@@ -21,7 +34,7 @@ const firstParagraph = (post) => {
   const firstTextSlice = post.body.find((slice) => slice.slice_type === 'text')
   if (firstTextSlice != null) {
     // Set the character limit for the text we'll show in the homepage
-    const textLimit = 190
+    const textLimit = 180
     const text = RichText.asText(firstTextSlice.primary.text.raw)
     const limitedText = text.substring(0, textLimit)
 
@@ -56,21 +69,33 @@ const PostSummary = ({ post, id }) => {
     <>
     <div className="post-summary" key={id}>
       {firstImage(post.node.data)}
-      <h2>
-        {/* We render a link to a particular post
-         * using the linkResolver for the url and its title */}
-        <Link to={post.node.url}>
-          {RichText.asText(post.node.data.title.raw).length !== 0
-            ? RichText.asText(post.node.data.title.raw)
-            : defaultTitle}
-        </Link>
-      </h2>
-      <p className="blog-post-meta">
-        <time>{postDate}</time>
-      </p>
-      {/* Renders a small preview of the post's text */}
-      {firstParagraph(post.node.data)}
-      <button><Link to={post.node.url}>Ver mais</Link></button>
+      <div className="post-content">
+        <h2>
+          {/* We render a link to a particular post
+          * using the linkResolver for the url and its title */}
+          <Link to={post.node.url}>
+            {RichText.asText(post.node.data.title.raw).length !== 0
+              ? RichText.asText(post.node.data.title.raw)
+              : defaultTitle}
+          </Link>
+        </h2>
+        <div className="publication-info">
+          {post.node.data.type && (post.node.data.type === "Artigo" ? 
+            <div className="publication-type green">
+              {post.node.data.type}
+            </div> :
+           <div className="publication-type yellow">
+            {post.node.data.type}
+           </div> 
+          )}
+          <p className="blog-post-meta">
+            <time>{postDate}</time>
+          </p>
+        </div>
+        {/* Renders a small preview of the post's text */}
+        {firstParagraph(post.node.data)}
+        <button><Link to={post.node.url}>Ver mais</Link></button>
+      </div>
     </div>
   </>
   )
@@ -80,7 +105,7 @@ export default ({ posts }) => {
   if (!posts) return null
 
   return (
-    <div className="blog-posts container">
+    <div className="publications-posts container">
       {posts.map((post) => (
         <PostSummary post={post} key={post.node.id} />
       ))}

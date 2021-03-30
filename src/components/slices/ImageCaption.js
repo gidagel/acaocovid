@@ -6,10 +6,11 @@ const DefaultImage = ({ slice }) => (
   <div className="post-image">
     <figcaption className="block-img">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
-      <small>{RichText.asText(slice.primary.image.alt)}</small>
       {slice.primary.caption.raw
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
         <figcaption className="image-label">
+          <small>{slice.primary.image.alt}</small>
+          <br/>
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
@@ -26,6 +27,8 @@ const EmphasizedImage = ({ slice }) => (
       {slice.primary.caption.raw
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
         <figcaption className="image-label">
+          <small>{slice.primary.image.alt}</small>
+          <br/>
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
@@ -44,6 +47,8 @@ const FullWidthImage = ({ slice }) => (
       {slice.primary.caption.raw
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
         <span className="image-label">
+          <small>{slice.primary.image.alt}</small>
+          <br/>
           {RichText.asText(slice.primary.caption.raw)}
         </span>
         ) : null}

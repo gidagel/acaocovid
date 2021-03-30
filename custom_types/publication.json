@@ -29,6 +29,17 @@
         "placeholder": "Article Files"
       }
     },
+    "type": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Nota Técnica",
+          "Artigo"
+        ],
+        "label": "Type",
+        "placeholder": "Type of publication"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",

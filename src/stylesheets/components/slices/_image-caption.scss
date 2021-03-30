@@ -4,12 +4,13 @@
 
     img {
       width: 100%;
-      height: 20em;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
     }
     @media screen and (max-width: $min-width-sm) {
       img {
-        height: 15em;
+        height: auto;
+        object-fit: contain;
       }
     }
   }
@@ -28,6 +29,10 @@
     font-size: 0.8em;
     margin: 0.5em 0;
     color: $offBlack;
+
+    small {
+      font-style: normal;
+    }
   }
 }
 

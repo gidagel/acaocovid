@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { RichText, Date } from 'prismic-reactjs'
 
 // Function to retrieve a small preview of the post's text
@@ -41,20 +40,22 @@ const PostSummary = ({ post, id }) => {
   const defaultTitle = 'Untitled'
   return (
     <div className="post-summary" key={id}>
-      <h2>
-        {/* We render a link to a particular post
-         * using the linkResolver for the url and its title */}
-        <a href={post.node.data.external_link.url} target="_blank">
-          {RichText.asText(post.node.data.title.raw).length !== 0
-            ? RichText.asText(post.node.data.title.raw)
-            : defaultTitle}
-        </a>
-      </h2>
-      <p className="blog-post-meta">
-        <time>{postDate}</time>
-      </p>
-      {firstParagraph(post.node.data)}
-      <button><a href={post.node.data.external_link.url} target="_blank">Ver Notícia</a></button>
+      <div className="post-content">
+        <h2>
+          {/* We render a link to a particular post
+          * using the linkResolver for the url and its title */}
+          <a href={post.node.data.external_link.url} target="_blank">
+            {RichText.asText(post.node.data.title.raw).length !== 0
+              ? RichText.asText(post.node.data.title.raw)
+              : defaultTitle}
+          </a>
+        </h2>
+        <p className="blog-post-meta">
+          <time>{postDate}</time>
+        </p>
+        {firstParagraph(post.node.data)}
+        <button><a href={post.node.data.external_link.url} target="_blank">Ver Notícia</a></button>
+      </div>
     </div>
   )
 }

@@ -7,6 +7,23 @@
     color: $brand-color;
   }
 
+  .main-image {
+    height: 22em;
+    margin: 1em 0;
+  }
+  .image-label {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+    color: $offBlack;
+
+    small {
+      font-style: normal;
+    }
+  }
+
   .pdf-view {
     display: flex;
     flex-direction: row;
@@ -53,6 +70,9 @@
       a, p {
         font-size: 1em;
       }
+    }
+    .main-image {
+      height: 10em;
     }
   }
   .post-body {

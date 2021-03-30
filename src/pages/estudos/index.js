@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../../components/layouts'
-import BlogPosts from '../../components/BlogPosts'
+import PublicationsPosts from '../../components/PublicationsPosts'
 import { withPreview } from 'gatsby-source-prismic'
 
 // Query for the Blog Home content in Prismic
@@ -86,7 +86,7 @@ export const StudiesPage = ({ data }) => {
   return (
     <Layout>
       <StudiesHead study={studies} />
-      <BlogPosts posts={posts} />
+      <PublicationsPosts posts={posts} />
     </Layout>
   )
 }

@@ -41,8 +41,12 @@ const gastbySourcePrismicConfig = {
 module.exports = {
   siteMetadata: {
     title: 'Ação Covid-19',
-    description: 'Ação Covid-19 Website',
+    titleTemplate: "Simulador de Transmissão do Coronavírus",
+    description: 'Ação Covid-19: grupo de pesquisadores que estudam a pandemia e a desigualdade no Brasil',
+    baseUrl: "www.acaocovid.org",
+    image: "/images/main_logo.jpg",
     author: '@gidagel',
+    twitterUsername: '@AcaoCovid'
   },
   plugins: [
     gastbySourcePrismicConfig,

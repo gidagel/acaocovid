@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
+import Img from "gatsby-image"
+import { RichText } from 'prismic-reactjs'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
-import { BackIcon } from '../components/Icons'
+import SEO from '../components/SEO'
 
 // Query for the Blog Post content in Prismic
 export const postquery = graphql`
@@ -18,6 +19,16 @@ export const postquery = graphql`
       data {
         date
         title {
+          raw
+        }
+        main_image {
+          url
+          alt
+          fluid {
+            src
+          }
+        }
+        description {
           raw
         }
         body {
@@ -91,37 +102,72 @@ const PostSlices = ({ slices }) =>
     return res
   })
 
+
+
 // Display the title, date, and content of the Post
-const PostBody = ({ blogPost }) => {
+const PostBody = ({ blogPost, ...props }) => {
   return (
-    <div className="container">
-      <div className="post-header">
-        <div className="back">
-          <Link to="/blog" >
-            <BackIcon style={{width: '24px', height: '24px'}} /> 
-          </Link>
+    <article {...props}>
+      <SEO
+        post={{
+          image: blogPost.data.main_image.url || false,
+          title: blogPost.data.title.raw,
+          url: blogPost.url,
+          description: blogPost.data.description.raw
+        }}
+      />
+      <div className="container">
+        <div className="post-header">
+          <div className="back">
+            <Link to="/">
+              <p>Home</p>
+            </Link>
+            <p>/</p>
+            <Link to="/publicacoes">
+              <p>Blog</p>
+            </Link>
+            <p>/</p>
+            <p>Você está aqui</p>
+          </div>
+          <h1>
+            {RichText.asText(blogPost.data.title.raw).length !== 0
+              ? RichText.asText(blogPost.data.title.raw)
+              : 'Untitled'}
+          </h1>
+          <h3>
+            {RichText.asText(blogPost.data.description.raw).length !== 0
+              ? RichText.asText(blogPost.data.description.raw)
+              : 'Untitled'}
+          </h3>
+          <Img 
+            fluid={blogPost.data.main_image.fluid} 
+            className="main-image"
+            imgStyle={{objectFit: 'cover', width:'100%', objectPosition: 'center'}}
+            alt={blogPost.data.main_image.alt} 
+          />
+          <figcaption className="image-label">
+            <small>{blogPost.data.main_image.alt}</small>
+          </figcaption>
         </div>
-        <h1>
-          {RichText.asText(blogPost.title.raw).length !== 0
-            ? RichText.asText(blogPost.title.raw)
-            : 'Untitled'}
-        </h1>
+        <div className='post-body'>
+          <PostSlices slices={blogPost.data.body} />
+        </div>
       </div>
-      {/* Go through the slices of the post and render the appropiate one */}
-      <PostSlices slices={blogPost.body} />
-    </div>
+    </article>
   )
 }
 
 export const Post = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
-  const post = data.prismicPost.data
+  const post = data.prismicPost
 
   return (
-    <Layout>
-      <PostBody blogPost={post} />
-    </Layout>
+    <>
+      <Layout>
+        <PostBody blogPost={post} />
+      </Layout>
+    </>
   )
 }
 

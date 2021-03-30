@@ -15,10 +15,35 @@
         "placeholder": "Blog Post Title..."
       }
     },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "description",
+        "placeholder": "Description"
+      }
+    },
     "date": {
       "type": "Date",
       "config": {
         "label": "Date"
+      }
+    },
+    "keywords": {
+      "type": "Text",
+      "config": {
+        "label": "keywords",
+        "placeholder": "Keywords"
+      }
+    },
+    "main_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200
+        },
+        "thumbnails": [],
+        "label": "main_image"
       }
     },
     "body": {
@@ -104,22 +129,24 @@
       }
     }
   },
- "Meta" : {
-    "categories" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "category" : {
-            "type" : "Link",
-            "config" : {
-              "select" : "document",
-              "customtypes" : [ "category" ],
-              "label" : "category",
-              "placeholder" : "Category"
+  "Meta": {
+    "categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "category": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "category"
+              ],
+              "label": "category",
+              "placeholder": "Category"
             }
           }
         },
-        "label" : "Categories"
+        "label": "Categories"
       }
     }
   }
