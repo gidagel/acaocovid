@@ -99,24 +99,25 @@ const PostSlices = ({ slices }) =>
 
 // Display the title, date, and content of the Post
 const PostBody = ({ publicationPost, props }) => {
-  
-  const firstParagraph = (publicationPost) => { 
-  const imgSlice = publicationPost.body.find((slice) => slice.slice_type === 'image_with_caption')
-  if (imgSlice != null) {
-    const description = RichText.asText(imgSlice.primary.caption.raw)
-  
+  const firstParagraph = (publicationPost) => {
+    const imgSlice = publicationPost.body.find(
+      (slice) => slice.slice_type === 'image_with_caption'
+    )
+    if (imgSlice != null) {
+      const description = RichText.asText(imgSlice.primary.caption.raw)
       return description
     }
   }
 
-  const firstImg = (publicationPost) => { 
-    const imgSlice = publicationPost.body.find((slice) => slice.slice_type === 'image_with_caption')
+  const firstImg = (publicationPost) => {
+    const imgSlice = publicationPost.body.find(
+      (slice) => slice.slice_type === 'image_with_caption'
+    )
     if (imgSlice != null) {
       const imgUrl = imgSlice.primary.image.url
-    
-        return imgUrl
-      }
+      return imgUrl
     }
+  }
   return (
     <article {...props}>
       <SEO
@@ -124,7 +125,7 @@ const PostBody = ({ publicationPost, props }) => {
           image: firstImg(publicationPost.data) || false,
           title: publicationPost.data.title.raw,
           url: publicationPost.url,
-          description: firstParagraph(publicationPost.data)
+          description: firstParagraph(publicationPost.data),
         }}
       />
       <div className="container">
@@ -145,15 +146,17 @@ const PostBody = ({ publicationPost, props }) => {
               ? RichText.asText(publicationPost.data.title.raw)
               : 'Untitled'}
           </h1>
-          {publicationPost.data.article_files.url &&
-          <div className='pdf-view'>
-            <Doc />
-            <a href={publicationPost.data.article_files.url} target="_blank">Ver PDF completo</a> 
-          </div>
-          } 
+          {publicationPost.data.article_files.url && (
+            <div className="pdf-view">
+              <Doc />
+              <a href={publicationPost.data.article_files.url} target="_blank">
+                Ver PDF completo
+              </a>
+            </div>
+          )}
         </div>
         {/* Go through the slices of the post and render the appropiate one */}
-        <div className='post-body'>
+        <div className="post-body">
           <PostSlices slices={publicationPost.data.body} />
         </div>
       </div>

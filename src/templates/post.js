@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { withPreview } from 'gatsby-source-prismic'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import { RichText } from 'prismic-reactjs'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
@@ -102,8 +102,6 @@ const PostSlices = ({ slices }) =>
     return res
   })
 
-
-
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost, ...props }) => {
   return (
@@ -113,7 +111,7 @@ const PostBody = ({ blogPost, ...props }) => {
           image: blogPost.data.main_image.url || false,
           title: blogPost.data.title.raw,
           url: blogPost.url,
-          description: blogPost.data.description.raw
+          description: blogPost.data.description.raw,
         }}
       />
       <div className="container">
@@ -139,17 +137,21 @@ const PostBody = ({ blogPost, ...props }) => {
               ? RichText.asText(blogPost.data.description.raw)
               : 'Untitled'}
           </h3>
-          <Img 
-            fluid={blogPost.data.main_image.fluid} 
+          <Img
+            fluid={blogPost.data.main_image.fluid}
             className="main-image"
-            imgStyle={{objectFit: 'cover', width:'100%', objectPosition: 'center'}}
-            alt={blogPost.data.main_image.alt} 
+            imgStyle={{
+              objectFit: 'cover',
+              width: '100%',
+              objectPosition: 'center',
+            }}
+            alt={blogPost.data.main_image.alt}
           />
           <figcaption className="image-label">
             <small>{blogPost.data.main_image.alt}</small>
           </figcaption>
         </div>
-        <div className='post-body'>
+        <div className="post-body">
           <PostSlices slices={blogPost.data.body} />
         </div>
       </div>

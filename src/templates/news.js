@@ -35,9 +35,10 @@ const PostBody = ({ newsPost }) => {
             ? RichText.asText(newsPost.title.raw)
             : 'Untitled'}
         </h1>
+        <a href={newsPost.external_link.url} target="_blank">
+          Conferir notícia completa
+        </a>
       </div>
-      {/* Go through the slices of the post and render the appropiate one */}
-      <PostSlices slices={newsPost.body} />
     </div>
   )
 }

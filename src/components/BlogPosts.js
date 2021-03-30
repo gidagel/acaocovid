@@ -1,39 +1,32 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Img from "gatsby-image"
-import { RichText, Date } from 'prismic-reactjs'
+import Img from 'gatsby-image'
 
 const firstImage = (post) => {
-  const imgFluid  = post.main_image.fluid
+  const imgFluid = post.main_image.fluid
   const altImg = post.main_image.alt
-
-    return (
-      <Img 
-        fluid={imgFluid} 
-        alt={altImg} 
-        className="img-preview" 
-        style={{
-          zIndex: '0'
-        }}
-        imgStyle={{
-          width: '100%', 
-          height: '100%', 
-          objectFit: 'cover', 
-          objectPosition: 'center'
-        }} 
-      />
-    )
-  }
-
+  return (
+    <Img
+      fluid={imgFluid}
+      alt={altImg}
+      className="img-preview"
+      style={{
+        zIndex: '0',
+      }}
+      imgStyle={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
+      }}
+    />
+  )
+}
 
 // A summary of the Blog Post
 const PostSummary = ({ post, id }) => {
-  
   return (
     <div className="post-summary" key={id}>
-      <a href={post.node.url}>
-        {firstImage(post.node.data)}
-      </a>
+      <a href={post.node.url}>{firstImage(post.node.data)}</a>
     </div>
   )
 }
