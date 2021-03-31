@@ -4,11 +4,11 @@ header {
 }
 
 .logo {
-  height: 5em;
+  height: 4em;
 }
 
 .logo img {
-  width: 5em;
+  width: 4em;
   justify-self: center;
 }
 
@@ -48,7 +48,7 @@ header {
 
 /* small nav */
 .header_small_button{
-  padding: 1em;
+  padding: 0.8em 0.8em 0.4em 0.8em;
   margin: 0;
 }
 
@@ -124,12 +124,12 @@ header {
   }
 
   .mobilelogo {
-    height: 4em;
+    height: 3.2em;
     display: block;
   }
   
   .mobilelogo img {
-    width: 4em;
+    width: 3.2em;
     justify-self: center;
   }
 }

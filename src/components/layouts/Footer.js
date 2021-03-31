@@ -36,19 +36,20 @@ export default () => (
           <div className="footer_links_left">
             <h3>Nosso Projeto</h3>
             <ul>
-              <li><Link to="/simulador">Simulador</Link></li>
               <li><Link to="/estudos">Estudos</Link></li>
               <li><Link to="/publicacoes">Publicações</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/imprensa">Imprensa</Link></li>
             </ul>
           </div>
-          <div className="footer_links_right">
+          {/* <div className="footer_links_right">
             <h3>Informações</h3>
             <ul>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/imprensa">Imprensa</Link></li>
               <li><Link to="/sobre">Sobre</Link></li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
       <p className="copyright">Ação Covid-19. 2021 (C). Todos os direitos reservados.</p>

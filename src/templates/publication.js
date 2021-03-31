@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { RichText, Date } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
@@ -118,6 +118,16 @@ const PostBody = ({ publicationPost, props }) => {
       return imgUrl
     }
   }
+
+  let postDate = Date(publicationPost.data.date)
+  postDate = postDate
+    ? new Intl.DateTimeFormat('pt-BR', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric',
+    }).format(postDate)
+    : ''
+
   return (
     <article {...props}>
       <SEO
@@ -154,6 +164,9 @@ const PostBody = ({ publicationPost, props }) => {
               </a>
             </div>
           )}
+          <p className="blog-post-meta">
+            <time>{postDate}</time>
+          </p>
         </div>
         {/* Go through the slices of the post and render the appropiate one */}
         <div className="post-body">

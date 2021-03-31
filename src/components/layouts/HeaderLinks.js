@@ -12,7 +12,7 @@ const HeaderLinks = (props) => {
     return (
       <div className='header_links'>
         <div className="links_left">
-          <Link to='/simulador' activeClassName="active" key="simulator" onClick={handleClick}>Simulador</Link>
+          {/* <Link to='/simulador' activeClassName="active" key="simulator" onClick={handleClick}>Simulador</Link> */}
           <Link to='/estudos' activeClassName="active" key="studies" onClick={handleClick}>Estudos</Link>
           <Link to='/publicacoes' activeClassName="active" key="publications" onClick={handleClick}>Publicações</Link>
         </div>
@@ -26,7 +26,7 @@ const HeaderLinks = (props) => {
         <div className="links_right">  
           <Link to='/blog' activeClassName="active" key="blog" onClick={handleClick}>Blog</Link>
           <Link to='/imprensa' activeClassName="active" key="press" onClick={handleClick}>Imprensa</Link>
-          <Link to='/sobre' activeClassName="active" key="about" onClick={handleClick}>Sobre Nós</Link>       
+          {/* <Link to='/sobre' activeClassName="active" key="about" onClick={handleClick}>Sobre Nós</Link>        */}
         </div>
       </div>
     )

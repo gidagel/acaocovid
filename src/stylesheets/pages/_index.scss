@@ -46,7 +46,210 @@
   }
 }
 
+.homePage {
+  width: 100%;
+  background-color: black;
+
+  /* Header Section */
+  .intro {
+    display: table;
+    width: 70%;
+    padding: 0;
+    height: 32em;
+    background: url(../images/Quando-Seremos-Vacinados.jpg) center center no-repeat;
+    background-color: #e5e5e5;
+    background-size: cover;
+    background-position: center;
+  }
+  .call {
+    max-width: 44%;
+    background-color: $white;
+    padding: 2em 1em 2em 2em;
+    margin-top: 2em;
+    position: absolute;
+    right: 2em;
+  }
+  .intro h1 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  /* Features Section */
+  .features {
+    padding: 2em 1em;
+    background: #f6f6f6;
+  }
+  .features h2 {
+    border-left: 0.4em $brand-color solid;
+    padding-left: 0.5em;
+    margin-bottom: 1.5em;
+  }
+  .feature-study {
+    padding: 1.5em;
+    margin: 1em;
+    background-color: $white;
+    max-width: 12em;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
+  }
+  .feature-study h3 {
+    margin-bottom: 0;
+  }
+  .feature-study p {
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+  }
+
+  /* About Section */
+  .about {
+    padding: 3em 1em 2em 1em;
+    background-color: $white;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .about h2 {
+    color: $offBlack;
+    border-left: 0.4em $green solid;
+    padding-left: 0.5em;
+  }
+  .about-text {
+    margin-left: 2em;
+    padding: 1em 2em;
+  }
+  .about-img {
+    min-width: 60%;
+  }
+  .about-img img {
+    width: 100%;
+    border-right: 0;
+    object-fit: cover;   
+  }
+  .about p {
+    line-height: 24px;
+    margin: 30px 0;
+    color: $offBlack;
+    font-size: 0.8em;
+  }
+  .image-label {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+    color: $offBlack;
+  }
+  /* BlogPosts Section */
+  .home-blog-featured {
+    padding: 2em 1em;
+    background-color: #f6f6f6;
+    max-width: 43%;
+  }
+  .featured-posts {
+    height: 12em;
+    width: 22em;
+    margin-bottom: 1em;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
+  }
+  .featured-news {
+    height: auto;
+    background-color: $white;
+    width: 22em;
+    padding: 1.5em;
+    margin-bottom: 1em;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
+  }
+  .featured-news p {
+    font-size: 0.9em;
+  }
+  .featured-post {
+    height: 12em;
+  }
+  .home-blog-featured h2 {
+    border-left: 0.4em $secondary solid;
+    padding-left: 0.5em;
+  }
+  .homeGrid {
+    display: flex;
+    flex-direction: row;
+    background-color: #f6f6f6;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: $max-width-sm) {
+  .homePage {
+    .intro {
+      padding-top: 4em;
+      width: 100%;
+      height: 20em;
+      margin-bottom: 14em;
+    }
+    .intro h1 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .call {
+      max-width: 100%;
+      margin-top: 12em;
+      margin-left: 1em;
+      padding: 1.5em;
+      right: 1em;
+    }
+    .features {
+      padding: 2em 0;
+      background: #f6f6f6;
+    }
+    .feature-study {
+      padding: 1em;
+      margin: 1em 0;
+      background-color: $white;
+      max-width: 100%;
+    }
+    .feature-study h3 {
+      margin-bottom: 0;
+      font-size: 21px;
+    }
+    .about {
+      padding: 1em 0 2em 0;
+    }
+    .about-text {
+      margin: 0;
+      padding: 0;
+    }
+    .about-img {
+      margin-bottom: 1em;
+    }
+    .about-content {
+      flex-direction: column;
+    }
+    /* BlogPosts Section */
+    .home-blog-featured {
+      padding: 2em 0 1em 0;
+      background-color: #f6f6f6;
+      max-width: 100%;
+    }
+    .featured-posts {
+      height: 10em;
+      width: 100%;
+    }
+    .featured-news {
+      width: 100%;
+    }
+    .featured-post {
+      height: 12em;
+    }
+    .home-blog-featured h2 {
+      border-left: 0.4em $secondary solid;
+      padding-left: 0.5em;
+    }
+    .home-blog-featured p {
+      max-width: 100%;
+    }
+    .homeGrid {
+      flex-direction: column;
+      background-color: #f6f6f6;
+    }
+  }
   .home-header {
     height: 20em;
     margin-bottom: 1em;

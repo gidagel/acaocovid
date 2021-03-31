@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { withPreview } from 'gatsby-source-prismic'
 import Img from 'gatsby-image'
-import { RichText } from 'prismic-reactjs'
+import { RichText, Date } from 'prismic-reactjs'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
 import SEO from '../components/SEO'
@@ -110,6 +110,16 @@ const PostBody = ({ blogPost, ...props }) => {
       const imgUrl = blogPost.data.main_image.url
       return (imgUrl)
   }
+
+  let postDate = Date(blogPost.data.date)
+  postDate = postDate
+    ? new Intl.DateTimeFormat('pt-BR', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric',
+    }).format(postDate)
+    : ''
+
   return (
     <article {...props}>
       <SEO
@@ -143,6 +153,9 @@ const PostBody = ({ blogPost, ...props }) => {
               ? RichText.asText(blogPost.data.description.raw)
               : 'Untitled'}
           </h3>
+          <p className="blog-post-meta">
+            <time>{postDate}</time>
+          </p>
           <Img
             fluid={blogPost.data.main_image.fluid}
             className="main-image"

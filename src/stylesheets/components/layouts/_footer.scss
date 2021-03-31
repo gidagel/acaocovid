@@ -17,7 +17,8 @@ footer h3 {
 }
 
 .footer_about {
-  max-width: 26%;
+  max-width: 13em;
+  min-width: 13em;
 }
 
 .footer_contact {
@@ -31,7 +32,7 @@ footer h3 {
 }
 
 .footer_links_left {
-  min-width: 10em;
+  min-width: 12em;
 }
 
 .social-icons {
@@ -66,10 +67,9 @@ footer p {
 }
 .copyright {
   font-size: 0.8em; 
-  margin-bottom: 2em;
-  margin-top: -3em;
   color: "4d4d4d";
-  text-align: right
+  text-align: center;
+  padding-top: 1em;
 }
 @media (max-width: $max-width-sm) {
   footer {
@@ -107,6 +107,7 @@ footer p {
   .copyright {
     text-align: left;
     margin-left: 1.2em;
-    margin-top: -1em;
+    padding-top: 0;
+    padding-bottom: 1em;
   }
 }
