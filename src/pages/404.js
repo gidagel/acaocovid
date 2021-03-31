@@ -14,7 +14,7 @@ import { AboutPage } from './sobre/index'
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>Page not found!</h1>
+    <h1>Não foi possível encontrar essa página. Volte para a <a href="/">home</a>.</h1>
   </Layout>
 )
 

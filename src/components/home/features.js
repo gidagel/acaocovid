@@ -21,14 +21,16 @@ export const Features = ({ studies }) => {
     <div className="features">
       <div className="container">
         <h2>A Cidade e os Bairros</h2>
-      {studies.map((study) => (
-        <div className="feature-study" key={study.node.id}>
-          <p>{formatDate(study.node.data.date)}</p>
-          <Link to={study.node.url}>
-              <h3>{RichText.asText(study.node.data.title.raw)}</h3>
-          </Link>
+        <div className="featured-content">
+        {studies.map((study) => (
+          <div className="feature-study" key={study.node.id}>
+            <p style={{color: '#9d9d9d'}}>{formatDate(study.node.data.date)}</p>
+            <Link to={study.node.url}>
+                <h3>{RichText.asText(study.node.data.title.raw)}</h3>
+            </Link>
+          </div>
+        ))}
         </div>
-      ))}
       </div>
     </div>
   )

@@ -27,6 +27,18 @@ export const NewsPosts = ({ press }) => {
     return null
   }
 
+  const formatDate = (props) => {
+    let postDate = Date(props)
+    postDate = postDate
+      ? new Intl.DateTimeFormat('pt-BR', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+      }).format(postDate)
+      : ''
+      return postDate
+    }
+
   return (
     <div className='home-blog-featured'>
       <div className='container'>
@@ -39,6 +51,9 @@ export const NewsPosts = ({ press }) => {
         <div className='home-blogposts'>
           {press.map((news) => (
           <div className='featured-news' key={news.node.id}>
+            <p style={{color: '#9d9d9d', fontSize: '0.8em'}}>
+              <time>{formatDate(news.node.data.date)}</time>
+            </p>
             <Link to={news.node.url}>
                 <h3>{RichText.asText(news.node.data.title.raw)}</h3>
             </Link>
