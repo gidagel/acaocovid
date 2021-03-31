@@ -30,7 +30,7 @@ const PostSummary = ({ post, id }) => {
   let postDate = Date(post.node.data.date)
   postDate = postDate
     ? new Intl.DateTimeFormat('pt-BR', {
-      month: 'long',
+      month: '2-digit',
       day: '2-digit',
       year: 'numeric',
     }).format(postDate)
@@ -41,7 +41,7 @@ const PostSummary = ({ post, id }) => {
   return (
     <div className="post-summary" key={id}>
       <div className="post-content">
-        <h2>
+        <h3>
           {/* We render a link to a particular post
           * using the linkResolver for the url and its title */}
           <a href={post.node.data.external_link.url} target="_blank">
@@ -49,7 +49,7 @@ const PostSummary = ({ post, id }) => {
               ? RichText.asText(post.node.data.title.raw)
               : defaultTitle}
           </a>
-        </h2>
+        </h3>
         <p className="blog-post-meta">
           <time>{postDate}</time>
         </p>

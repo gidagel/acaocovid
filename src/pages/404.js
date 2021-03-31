@@ -10,6 +10,7 @@ import { BlogHomePage } from './blog/index'
 import { StudiesPage } from './estudos/index'
 import { PublicationsPage } from './publicacoes/index'
 import { PressPage } from './imprensa/index'
+import { AboutPage } from './sobre/index'
 
 const NotFoundPage = () => (
   <Layout>
@@ -28,6 +29,7 @@ export default withUnpublishedPreview(NotFoundPage, {
     homeblog: BlogHomePage,
     studies: StudiesPage,
     publications: PublicationsPage,
-    press: PressPage
+    press: PressPage,
+    about: AboutPage
   },
 })

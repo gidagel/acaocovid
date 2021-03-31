@@ -8,6 +8,7 @@ const firstImage = (post) => {
     <Img
       fluid={imgFluid}
       alt={altImg}
+      key={altImg}
       className="img-preview"
       style={{
         zIndex: '0',

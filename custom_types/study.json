@@ -1,110 +1,241 @@
 {
-  "Study": {
-    "uid": {
-      "type": "UID",
-      "config": {
-        "label": "UID",
-        "placeholder": "unique-identifier-for-blog-post-url"
+  "Study" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "UID",
+        "placeholder" : "unique-identifier-for-blog-post-url"
       }
     },
-    "title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Title",
-        "placeholder": "Blog Post Title..."
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Blog Post Title..."
       }
     },
-    "date": {
-      "type": "Date",
-      "config": {
-        "label": "Date"
+    "date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Date"
       }
     },
-    "body": {
-      "type": "Slices",
-      "fieldset": "Slice zone",
-      "config": {
-        "labels": {
-          "image_with_caption": [
-            {
-              "name": "emphasized",
-              "display": "Emphasized"
-            },
-            {
-              "name": "image-full-width",
-              "display": "Full"
-            }
-          ]
+    "article_files" : {
+      "type" : "Link",
+      "config" : {
+        "select" : "media",
+        "label" : "files",
+        "placeholder" : "Article Files"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "image_with_caption" : [ {
+            "name" : "emphasized",
+            "display" : "Emphasized"
+          }, {
+            "name" : "image-full-width",
+            "display" : "Full"
+          } ]
         },
-        "choices": {
-          "text": {
-            "type": "Slice",
-            "fieldset": "Text",
-            "description": "A rich text section",
-            "icon": "text_fields",
-            "non-repeat": {
-              "text": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading2, heading3, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
-                  "allowTargetBlank": true,
-                  "label": "Text",
-                  "placeholder": "Post text..."
+        "choices" : {
+          "text" : {
+            "type" : "Slice",
+            "fieldset" : "Text",
+            "description" : "A rich text section",
+            "icon" : "text_fields",
+            "non-repeat" : {
+              "text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading2, heading3, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank" : true,
+                  "label" : "Text",
+                  "placeholder" : "Post text..."
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "quote": {
-            "type": "Slice",
-            "fieldset": "Quote",
-            "description": "A quote section",
-            "icon": "format_quote",
-            "non-repeat": {
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Quote",
-                  "placeholder": "Post Quote..."
+          "quote" : {
+            "type" : "Slice",
+            "fieldset" : "Quote",
+            "description" : "A quote section",
+            "icon" : "format_quote",
+            "non-repeat" : {
+              "quote" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Quote",
+                  "placeholder" : "Post Quote..."
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "image_with_caption": {
-            "type": "Slice",
-            "fieldset": "Image with Caption",
-            "description": "An image with an optional caption",
-            "icon": "image",
-            "non-repeat": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 1200
+          "image_with_caption" : {
+            "type" : "Slice",
+            "fieldset" : "Image with Caption",
+            "description" : "An image with an optional caption",
+            "icon" : "image",
+            "non-repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1200
                   },
-                  "thumbnails": [],
-                  "label": "Image"
+                  "thumbnails" : [ ],
+                  "label" : "Image"
                 }
               },
-              "caption": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading3",
-                  "label": "Caption",
-                  "placeholder": "Image Caption..."
+              "caption" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Caption",
+                  "placeholder" : "Image Caption..."
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
+          },
+          "video_highlights" : {
+            "type" : "Slice",
+            "fieldset" : "Video Highlights",
+            "description" : "Highlights of your video channel",
+            "icon" : "ondemand_video",
+            "display" : "list",
+            "non-repeat" : {
+              "eyebrow_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Eyebrow headline",
+                  "placeholder" : "Reinforce your copy with a key-worded text, to be displayed before title"
+                }
+              },
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Title",
+                  "placeholder" : "Video Highlights"
+                }
+              },
+              "description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, strong, em, hyperlink",
+                  "allowTargetBlank" : true,
+                  "label" : "Description",
+                  "placeholder" : "These are some awesome videos ..."
+                }
+              }
+            },
+            "repeat" : {
+              "video_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, strong",
+                  "label" : "Video title",
+                  "placeholder" : "My awesome video"
+                }
+              },
+              "video_src" : {
+                "type" : "Embed",
+                "config" : {
+                  "label" : "Video src"
+                }
+              }
+            }
+          },
+          "pricing_table" : {
+            "type" : "Slice",
+            "fieldset" : "Pricing Table",
+            "description" : "Display a list of pricing plans",
+            "icon" : "attach_money",
+            "display" : "grid",
+            "non-repeat" : {
+              "eyebrow_headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Eyebrow Headline",
+                  "placeholder" : "Pricing plans"
+                }
+              },
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Title",
+                  "placeholder" : "Choose the plan"
+                }
+              },
+              "description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, strong, em, hyperlink",
+                  "allowTargetBlank" : true,
+                  "label" : "Description",
+                  "placeholder" : "Choose the version that works for you ..."
+                }
+              }
+            },
+            "repeat" : {
+              "plan_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Plan title",
+                  "placeholder" : "Simple, Gold, Premium..."
+                }
+              },
+              "price_option" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "heading4",
+                  "label" : "Price Option",
+                  "placeholder" : "Free, $19, Contact us..."
+                }
+              },
+              "features" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "list-item",
+                  "label" : "Features",
+                  "placeholder" : "A list of features using bullet list"
+                }
+              },
+              "call_to_action" : {
+                "type" : "Link",
+                "config" : {
+                  "allowTargetBlank" : true,
+                  "label" : "Call To Action",
+                  "placeholder" : "Link to Signup / More info..."
+                }
+              },
+              "call_to_action_text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph",
+                  "label" : "Call To Action Text",
+                  "placeholder" : "Start your free trial"
+                }
+              }
+            }
           }
         }
       }
     }
   },
- "Meta" : {
+  "Meta" : {
     "categories" : {
       "type" : "Group",
       "config" : {

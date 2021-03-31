@@ -102,13 +102,19 @@ const PostSlices = ({ slices }) =>
     return res
   })
 
+  
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost, ...props }) => {
+
+  const firstImg = (blogPost) => {
+      const imgUrl = blogPost.data.main_image.url
+      return (imgUrl)
+  }
   return (
     <article {...props}>
       <SEO
         post={{
-          image: blogPost.data.main_image.url || false,
+          image: firstImg(blogPost) || false,
           title: blogPost.data.title.raw,
           url: blogPost.url,
           description: blogPost.data.description.raw,
@@ -121,7 +127,7 @@ const PostBody = ({ blogPost, ...props }) => {
               <p>Home</p>
             </Link>
             <p>/</p>
-            <Link to="/publicacoes">
+            <Link to="/blog">
               <p>Blog</p>
             </Link>
             <p>/</p>

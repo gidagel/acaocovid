@@ -68,7 +68,11 @@ export const query = graphql`
                     alt
                     url
                     fluid {
-                      ...GatsbyPrismicImageFluid
+                      base64 
+                      aspectRatio 
+                      src 
+                      srcSet 
+                      sizes 
                     }
                   }
                   caption {

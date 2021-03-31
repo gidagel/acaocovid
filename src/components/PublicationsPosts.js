@@ -57,7 +57,7 @@ const PostSummary = ({ post, id }) => {
   let postDate = Date(post.node.data.date)
   postDate = postDate
     ? new Intl.DateTimeFormat('pt-BR', {
-      month: 'long',
+      month: '2-digit',
       day: '2-digit',
       year: 'numeric',
     }).format(postDate)

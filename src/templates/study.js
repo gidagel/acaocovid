@@ -4,7 +4,8 @@ import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
-import { BackIcon } from '../components/Icons'
+import { Doc } from '../components/Icons'
+import SEO from '../components/SEO'
 
 // Query for the Blog Post content in Prismic
 export const studyquery = graphql`
@@ -19,6 +20,9 @@ export const studyquery = graphql`
         date
         title {
           raw
+        }
+        article_files {
+          url
         }
         body {
           ... on PrismicStudyBodyText {
@@ -92,31 +96,76 @@ const PostSlices = ({ slices }) =>
   })
 
 // Display the title, date, and content of the Post
-const PostBody = ({ studyPost }) => {
+const PostBody = ({ studyPost, ...props }) => {
+  const firstParagraph = (studyPost) => {
+    const imgSlice = studyPost.body.find(
+      (slice) => slice.slice_type === 'image_with_caption',
+    )
+    if (imgSlice != null) {
+      const description = RichText.asText(imgSlice.primary.caption.raw)
+      return description
+    }
+  }
+  const firstImg = (studyPost) => {
+    const imgSlice = studyPost.body.find(
+      (slice) => slice.slice_type === 'image_with_caption'
+    )
+    if (imgSlice != null) {
+      const imgUrl = imgSlice.primary.image.url
+      return imgUrl
+    }
+  }
+  
   return (
-    <div className="container">
-      <div className="post-header">
-        <div className="back">
-          <Link to="/estudos">
-            <BackIcon style={{width: '24px', height: '24px'}} /> 
-          </Link>
+    <article {...props}>
+      <SEO
+        post={{
+          image: firstImg(studyPost.data) || false,
+          title: studyPost.data.title.raw,
+          url: studyPost.url,
+          description: firstParagraph(studyPost.data),
+        }}
+      />
+      <div className="container">
+        <div className="post-header">
+          <div className="back">
+            <Link to="/">
+              <p>Home</p>
+            </Link>
+            <p>/</p>
+            <Link to="/estudos">
+              <p>Estudos</p>
+            </Link>
+            <p>/</p>
+            <p>Você está aqui</p>
+          </div>
+          <h1>
+            {RichText.asText(studyPost.data.title.raw).length !== 0
+              ? RichText.asText(studyPost.data.title.raw)
+              : 'Untitled'}
+          </h1>
+          {studyPost.data.article_files.url && (
+            <div className="pdf-view">
+              <Doc />
+              <a href={studyPost.data.article_files.url} target="_blank">
+                Ver PDF completo
+              </a>
+            </div>
+          )}
         </div>
-        <h1>
-          {RichText.asText(studyPost.title.raw).length !== 0
-            ? RichText.asText(studyPost.title.raw)
-            : 'Untitled'}
-        </h1>
+        {/* Go through the slices of the post and render the appropiate one */}
+        <div className="post-body">
+          <PostSlices slices={studyPost.data.body} />
+        </div>
       </div>
-      {/* Go through the slices of the post and render the appropiate one */}
-      <PostSlices slices={studyPost.body} />
-    </div>
+    </article>
   )
 }
 
 export const Study = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
-  const study = data.prismicStudy.data
+  const study = data.prismicStudy
 
   return (
     <Layout>

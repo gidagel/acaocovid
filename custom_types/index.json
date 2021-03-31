@@ -42,6 +42,18 @@
     "value": "home.json"
   },
   {
+    "id": "about",
+    "name": "About",
+    "repeatable": false,
+    "value": "about.json"
+  },
+  {
+    "id": "simulator",
+    "name": "Simulator",
+    "repeatable": false,
+    "value": "simulator.json"
+  },
+  {
     "id": "press",
     "name": "Press",
     "repeatable": false,
