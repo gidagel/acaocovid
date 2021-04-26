@@ -19,7 +19,6 @@ export const Features = ({ studies }) => {
 
   return (
     <div className="features">
-      <div className="container">
         <h2>A Cidade e os Bairros</h2>
         <div className="featured-content">
         {studies.map((study) => (
@@ -31,7 +30,6 @@ export const Features = ({ studies }) => {
           </div>
         ))}
         </div>
-      </div>
     </div>
   )
 }

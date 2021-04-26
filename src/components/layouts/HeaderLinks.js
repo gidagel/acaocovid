@@ -26,7 +26,7 @@ const HeaderLinks = (props) => {
         <div className="links_right">  
           <Link to='/blog' activeClassName="active" key="blog" onClick={handleClick}>Blog</Link>
           <Link to='/imprensa' activeClassName="active" key="press" onClick={handleClick}>Imprensa</Link>
-          {/* <Link to='/sobre' activeClassName="active" key="about" onClick={handleClick}>Sobre Nós</Link>        */}
+          <Link to='/sobre' activeClassName="active" key="about" onClick={handleClick}>Sobre Nós</Link>
         </div>
       </div>
     )

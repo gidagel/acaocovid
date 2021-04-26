@@ -41,7 +41,6 @@ export const NewsPosts = ({ press }) => {
 
   return (
     <div className='home-blog-featured'>
-      <div className='container'>
         <div className='section-title'>
           <h2>Imprensa</h2>
           <p>
@@ -62,7 +61,6 @@ export const NewsPosts = ({ press }) => {
           </div>
           ))}
         </div>
-      </div>
     </div>
   )
 }

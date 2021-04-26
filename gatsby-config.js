@@ -18,6 +18,7 @@ const studiesSchema = require('./custom_types/studies.json')
 const studySchema = require('./custom_types/study.json')
 const simulatorSchema = require('./custom_types/simulator.json')
 const aboutSchema = require('./custom_types/about.json')
+const homeSchema = require('./custom_types/home.json')
 
 const gastbySourcePrismicConfig = {
   resolve: 'gatsby-source-prismic',
@@ -37,7 +38,8 @@ const gastbySourcePrismicConfig = {
       publication: publicationSchema,
       news: newsSchema,
       simulator: simulatorSchema,
-      about: aboutSchema
+      about: aboutSchema,
+      home: homeSchema
     }
   },
 }

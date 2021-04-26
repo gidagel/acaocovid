@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts'
 import { Features } from '../components/home/features'
 import { About } from '../components/home/about'
+import { Simulator } from '../components/home/simulator'
 import { BlogPosts } from '../components/home/blogPosts'
 import { NewsPosts } from '../components/home/newsPosts'
 import { withPreview } from 'gatsby-source-prismic'
@@ -136,20 +137,89 @@ export const query = graphql`
         }
       }
     }
+    prismicHome {
+      data {
+        display_title {
+          text
+          raw
+          html
+        }
+        body {
+          ... on PrismicHomeBodyHeadlineWithButton {
+            id
+            primary {
+              description {
+                text
+              }
+              headline {
+                text
+              }
+              button {
+                url
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyFullWidthImage {
+            id
+            primary {
+              image {
+                url
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyInfoWithImage {
+            id
+            primary {
+              text {
+                text
+              }
+              featured_image {
+                url
+              }
+              section_title {
+                text
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyTextInfo {
+            id
+            slice_type
+            primary {
+              left_column_text {
+                text
+              }
+              right_column_text {
+                text
+              }
+              section_title {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
-export const Homepage = ({data}) => {
+export const HomePage = ({data}) => {
   const studies = data.allPrismicStudy.edges
   const posts = data.allPrismicPost.edges
   const press = data.allPrismicNews.edges
+  const home = data.prismicHome.data
   return (
     <Layout>
       <div className="homePage">
-        <HomeHeader/>
+        <HomeHeader homeHeader={home} />
+        <div className="homeStudies container">
         <Features studies={studies}/>
-        <About/>
-        <div className="homeGrid">
+        </div>
+        <About about={home} />
+        <Simulator about={home} />
+        <div className="homeGrid container">
           <BlogPosts posts={posts} />
           <NewsPosts press={press} />
         </div>
@@ -158,4 +228,4 @@ export const Homepage = ({data}) => {
   )
 }
 
-export default withPreview(Homepage)
+export default withPreview(HomePage)

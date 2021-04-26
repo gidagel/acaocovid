@@ -3,42 +3,86 @@ import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../../components/layouts'
 import Partners from '../../components/Partners'
+import About from '../../components/About'
 import { withPreview } from 'gatsby-source-prismic'
 
-// Using the queried Blog Home document data, we render the top section
-const ArticleHead = ({ page }) => {
-  return (
-    <div className="home-header" data-wio-id={page.id}>
-      <div className="blog-header">
-        <Img 
-          fluid={page.image.fluid} 
-          className="blog-avatar" 
-          imgStyle={{
-            maxHeight: '100%', 
-            objectFit: 'cover', 
-            width: '100%', 
-            opacity: '0.3', 
-            objectPosition: 'top'
-          }} 
-          alt={page.image.alt} 
-        />
-      </div>
-      <div className="container">
-        <div className="blog-container-descript">
-          <h1>{page.headline.text}</h1>
-          <p className="blog-description">{page.description.text}</p>
-        </div>
-      </div>
-    </div>
-  )
+export const query = graphql`
+query {
+  prismicAbout {
+    data {
+      body {
+        ... on PrismicAboutBodyHeadlineWithButton {
+          id
+          slice_type  
+          primary {
+            button {
+              url
+            }
+            description {
+              text
+            }
+            headline {
+              text
+            }
+          }
+        }
+        ... on PrismicAboutBodyFullWidthImage {
+          id
+          primary {
+            image {
+              url
+            }
+          }
+          slice_type
+        }
+        ... on PrismicAboutBodyInfoWithImage {
+          id
+          primary {
+            team
+            text {
+              text
+            }
+            section_title {
+              text
+            }
+            featured_image {
+              url
+            }
+            cvlink {
+              url
+            }
+          }
+          slice_type
+        }
+        ... on PrismicAboutBodyTextInfo {
+          id
+          primary {
+            left_column_text {
+              text
+            }
+            right_column_text {
+              text
+            }
+            section_title {
+              text
+            }
+          }
+          slice_type
+        }
+      }
+    }
+  }
 }
+`
 
-export const AboutPage = () => {
-  
+
+export const AboutPage = ({data}) => {
+  const about = data.prismicAbout.data
 
   return (
     <Layout>
-      <Partners />
+      <About about={about} />
+      {/* <Partners /> */}
     </Layout>
   )
 }
