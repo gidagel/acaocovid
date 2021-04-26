@@ -17,7 +17,7 @@ const About = ({about}) => {
     <div className="container">
       <div className="about-us">
         <h1>{aboutSectionTextInfo(about)}</h1>
-
+        <p className="description">O grupo de pesquisa interdisciplinar Ação Covid-19 conjuga pesquisa científica e ativismo social para o combate à disseminação do novo coronavírus nas cidades brasileiras, no cenário de múltiplas desigualdades que caracteriza o País. O grupo é formado por <strong>25 pesquisadores</strong> de diversas áreas do conhecimento associados a <strong>13 instituições</strong> (entre elas USP, Unicamp, UFABC, ITA, Paris Nord, Universidade de Bristol, Universidade de Liverpool).</p>
         <h3>Equipe de Modelagem</h3>
         <div className='team'>
         {about.body.map((person) => {

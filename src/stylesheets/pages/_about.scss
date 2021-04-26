@@ -8,6 +8,11 @@
   margin-top: 2em;
 }
 
+.about-us .description {
+  font-size: 0.9em;
+  padding: 0 2em;
+}
+
 .team {
   display: flex;
   flex-direction: row;
@@ -18,14 +23,14 @@
 .people-container {
   background-color: $white;
   padding: 1.2em 1em 0.1em 1em;
-  max-width: 30%;
-  min-width: 30%;
+  max-width: 22%;
+  min-width: 22%;
   margin: 0 1em 1em 0;
   text-align: left;
 }
 
 .people-container p {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 .people-img {
