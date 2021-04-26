@@ -4,13 +4,13 @@ import { Post } from '../templates/post'
 import { Study } from '../templates/study'
 import { Publication } from '../templates/publication'
 import { News } from '../templates/news'
-import { Homepage } from './index'
 import Layout from '../components/layouts'
 import { BlogHomePage } from './blog/index'
 import { StudiesPage } from './estudos/index'
 import { PublicationsPage } from './publicacoes/index'
 import { PressPage } from './imprensa/index'
 import { AboutPage } from './sobre/index'
+import { HomePage } from './index'
 
 const NotFoundPage = () => (
   <Layout>
@@ -21,7 +21,6 @@ const NotFoundPage = () => (
 
 export default withUnpublishedPreview(NotFoundPage, {
   templateMap: {
-    home: Homepage,
     post: Post,
     study: Study,
     publication: Publication,
@@ -30,6 +29,7 @@ export default withUnpublishedPreview(NotFoundPage, {
     studies: StudiesPage,
     publications: PublicationsPage,
     press: PressPage,
-    about: AboutPage
+    about: AboutPage, 
+    home: HomePage
   },
 })

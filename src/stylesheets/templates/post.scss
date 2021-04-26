@@ -8,8 +8,7 @@
   }
 
   .main-image {
-    height: 22em;
-    margin: 1em 0 0.5em 0;
+    margin: 1em auto 0.5em auto;
   }
   .image-label {
     display: block;
@@ -85,9 +84,6 @@
       a, p {
         font-size: 1em;
       }
-    }
-    .main-image {
-      height: 12em;
     }
   }
   .post-body {

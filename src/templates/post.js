@@ -160,9 +160,11 @@ const PostBody = ({ blogPost, ...props }) => {
             fluid={blogPost.data.main_image.fluid}
             className="main-image"
             imgStyle={{
-              objectFit: 'cover',
+              objectFit: 'contain',
               width: '100%',
+              height: 'auto',
               objectPosition: 'center',
+              position: 'relative'
             }}
             alt={blogPost.data.main_image.alt}
           />

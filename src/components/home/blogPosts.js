@@ -7,7 +7,6 @@ export const BlogPosts = ({ posts }) => {
 
   return (
     <div className='home-blog-featured'>
-      <div className='container'>
         <div className='section-title'>
           <h2>Nosso Blog</h2>
           <p>
@@ -18,12 +17,11 @@ export const BlogPosts = ({ posts }) => {
           {posts.map((post) => (
           <div className='featured-posts' key={post.node.id}>
             <Link to={post.node.url}>
-                <Img fluid={post.node.data.main_image.fluid} className='featured-post' imgStyle={{maxHeight: '100%', objectFit: 'contain', width: '100%'}} />
+                <Img fluid={post.node.data.main_image.fluid} imgStyle={{height: 'auto', objectFit: 'contain', width: '100%', position: 'relative'}} />
             </Link>
           </div>
           ))}
         </div>
-      </div>
     </div>
   )
 }

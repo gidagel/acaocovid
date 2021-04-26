@@ -136,20 +136,86 @@ export const query = graphql`
         }
       }
     }
+    prismicHome {
+      data {
+        display_title {
+          text
+        }
+        body {
+          ... on PrismicHomeBodyHeadlineWithButton {
+            id
+            primary {
+              description {
+                text
+              }
+              headline {
+                text
+              }
+              button {
+                url
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyFullWidthImage {
+            id
+            primary {
+              image {
+                url
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyInfoWithImage {
+            id
+            primary {
+              text {
+                text
+              }
+              featured_image {
+                url
+              }
+              section_title {
+                text
+              }
+            }
+            slice_type
+          }
+          ... on PrismicHomeBodyTextInfo {
+            id
+            slice_type
+            primary {
+              left_column_text {
+                text
+              }
+              right_column_text {
+                text
+              }
+              section_title {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
-export const Homepage = ({data}) => {
+export const HomePage = ({data}) => {
   const studies = data.allPrismicStudy.edges
   const posts = data.allPrismicPost.edges
   const press = data.allPrismicNews.edges
+  const homeHeader = data.prismicHome.data
   return (
     <Layout>
       <div className="homePage">
-        <HomeHeader/>
+        <HomeHeader homeHeader={homeHeader} />
+        <div className="homeStudies container">
         <Features studies={studies}/>
+        </div>
         <About/>
-        <div className="homeGrid">
+        <div className="homeGrid container">
           <BlogPosts posts={posts} />
           <NewsPosts press={press} />
         </div>
@@ -158,4 +224,4 @@ export const Homepage = ({data}) => {
   )
 }
 
-export default withPreview(Homepage)
+export default withPreview(HomePage)

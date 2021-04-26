@@ -1,12 +1,20 @@
 import React from 'react'
 
-export const HomeHeader = (props) => {
+export const HomeHeader = ({ homeHeader }) => {
+  const imgHeader = (homeHeader) => {
+    const imgSlice = homeHeader.body.find(
+      (slice) => slice.slice_type === 'full_width_image'
+    )
+    if (imgSlice != null) {
+      const mainImg = imgSlice.primary.image.url
+      return mainImg
+    }
+  }
+
   return (
-      <div className="intro">
+      <div className="intro" style={{backgroundImage: imgHeader(homeHeader) || false }}>
           <div className="call">
-            <h1>
-              Sob que condições a vacinação conteria a pandemia no Brasil?
-            </h1>
+            <h2>{homeHeader.display_title.text}</h2>
             <p>
               Estudo mostra o quanto é preciso imunizar em cada Estado para ver
               melhoras na pandemia

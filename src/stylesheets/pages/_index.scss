@@ -2,18 +2,17 @@
 .home-header {
   text-align: center;
   margin-bottom: 1em;
-  height: 16em;
+  height: 45vh;
   width: 100%;
   background-color: black;
   
   .blog-header {
     width: 100%;
     overflow: hidden;
-    height: 16em;
   }
 
   .blog-avatar {
-    height: 16em;
+    height: 45vh;
   }
 
   .blog-container-descript {
@@ -48,28 +47,28 @@
 
 .homePage {
   width: 100%;
-  background-color: black;
+  background-color: #f6f6f6;
 
   /* Header Section */
   .intro {
     display: table;
     width: 70%;
     padding: 0;
-    height: 32em;
-    background: url(../images/Quando-Seremos-Vacinados.jpg) center center no-repeat;
+    height: 80vh;
     background-color: #e5e5e5;
     background-size: cover;
     background-position: center;
   }
   .call {
-    max-width: 44%;
+    max-width: 30em;
     background-color: $white;
     padding: 2em 1em 2em 2em;
     margin-top: 2em;
     position: absolute;
+    display:inline-block;
     right: 2em;
   }
-  .intro h1 {
+  .call h1 {
     font-size: 42px;
     line-height: 48px;
   }
@@ -86,11 +85,14 @@
   .featured-content {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .feature-study {
     padding: 1.5em;
     margin-left: 2em;
+    margin-bottom: 1em;
     background-color: $white;
     max-width: 12.5em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
@@ -145,30 +147,28 @@
   }
   /* BlogPosts Section */
   .home-blog-featured {
-    padding: 2em 1em;
+    padding: 2em 0;
     background-color: #f6f6f6;
     max-width: 43%;
   }
   .featured-posts {
-    height: 13em;
-    width: 22em;
+    width: 75%;
     margin-bottom: 1em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
   }
+  .featured-posts picture img {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
+  }
   .featured-news {
-    height: auto;
     background-color: $white;
-    width: 18em;
-    padding: 1.5em;
-    margin-bottom: 1em;
+    width: 80%;
+    padding: 1.5em 1.5em 2em 1.5em;
+    margin-bottom: 1.5em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
   }
   .featured-news p {
     font-size: 0.9em;
     margin-bottom: 0.5em;
-  }
-  .featured-post {
-    height: 13.5em;
   }
   .home-blog-featured h2 {
     border-left: 0.4em $secondary solid;
@@ -179,6 +179,10 @@
     flex-direction: row;
     background-color: #f6f6f6;
     justify-content: space-between;
+    padding: 0 2em;
+  }
+  .homeGrid > * {
+    max-width: 45%;
   }
 }
 
@@ -238,15 +242,12 @@
       max-width: 100%;
     }
     .featured-posts {
-      height: 10em;
       width: 100%;
     }
     .featured-news {
       width: 100%;
     }
-    .featured-post {
-      height: 12em;
-    }
+
     .home-blog-featured h2 {
       border-left: 0.4em $secondary solid;
       padding-left: 0.5em;
@@ -257,6 +258,7 @@
     .homeGrid {
       flex-direction: column;
       background-color: #f6f6f6;
+      padding: 0 1em;
     }
   }
   .home-header {
