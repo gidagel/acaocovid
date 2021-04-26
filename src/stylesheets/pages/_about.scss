@@ -1,0 +1,36 @@
+.about-us {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.about-us h3 {
+  color: $brand-color;
+  margin-top: 2em;
+}
+
+.team {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.people-container {
+  background-color: $white;
+  padding: 1.2em 1em 0.1em 1em;
+  max-width: 30%;
+  min-width: 30%;
+  margin: 0 1em 1em 0;
+  text-align: left;
+}
+
+.people-container p {
+  font-size: 0.8em;
+}
+
+.people-img {
+  width: 10em;
+  height: 10em;
+  border-radius: 20em;
+  margin: 0 auto 1em auto;
+}

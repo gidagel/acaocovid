@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby'
 
-export const About = ({ about }) => {
+export const Simulator = ({ about }) => {
 
   const imgAbout = (about) => {
     const imgSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
     )
     if (imgSlice != null) {
       const mainImg = imgSlice.primary.featured_image.url
@@ -14,7 +14,7 @@ export const About = ({ about }) => {
   }
   const imgAltAbout = (about) => {
     const imgSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
     )
     if (imgSlice != null) {
       const mainImg = imgSlice.primary.featured_image.alt
@@ -23,7 +23,7 @@ export const About = ({ about }) => {
   }
   const imgCopyAbout = (about) => {
     const imgSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
     )
     if (imgSlice != null) {
       const mainImg = imgSlice.primary.featured_image.copyright
@@ -32,7 +32,7 @@ export const About = ({ about }) => {
   }
   const sectionTitle = (about) => {
     const textSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.section_title.text      
@@ -42,7 +42,7 @@ export const About = ({ about }) => {
 
   const infoText = (about) => {
     const textSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
     )
     if (textSlice != null) {
       const leftColumn = textSlice.primary.text.text
@@ -54,19 +54,18 @@ export const About = ({ about }) => {
     <div className='about'>
       <div className='container'>
         <div className='about-content'>
-            <div className='about-img'>
-              <img src={imgAbout(about)} alt={imgAltAbout(about)} />
-              <figcaption className="image-label">
-                <small>{imgCopyAbout(about)}</small>
-              </figcaption>
-            </div>
-            <div className='about-text'>
+            <div className='simulator-text'>
               <h2>{sectionTitle(about)}</h2>
               <p>{infoText(about)}</p>
-              <h4>Coletivo formado por 25 pesquisadores de diversas áreas do conhecimento associados a 13 instituições pelo mundo!</h4>
-              <Link to="/sobre">
-                Conheça a equipe
-              </Link>
+              <p><a href="https://pamgaiguer.github.io/simuladorcovid/" target="_blank">
+                Faça uma simulação!
+              </a></p>
+              <p><a href="https://www.youtube.com/watch?v=XrwUUbnVfsg" target="_blank">
+                Veja como usar o simulador
+              </a></p>
+            </div>
+            <div className='about-img' style={{ marginBottom: 0}}>
+              <img src={imgAbout(about)} alt={imgAltAbout(about)} />
             </div>
           </div>
       </div>

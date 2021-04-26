@@ -1,4 +1,5 @@
 import React from 'react'
+import { RichText } from 'prismic-reactjs'
 
 export const HomeHeader = ({ homeHeader }) => {
   const imgHeader = (homeHeader) => {
@@ -10,17 +11,35 @@ export const HomeHeader = ({ homeHeader }) => {
       return mainImg
     }
   }
+  const headerSectionTextInfo = (homeHeader) => {
+    const textSlice = homeHeader.body.find(
+      (slice) => slice.slice_type === 'text_info'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.section_title.text      
+      return sectionTitle
+    }
+  }
 
+  const headerLeftText = (homeHeader) => {
+    const textSlice = homeHeader.body.find(
+      (slice) => slice.slice_type === 'text_info'
+    )
+    if (textSlice != null) {
+      const leftColumn = textSlice.primary.left_column_text.text
+      return leftColumn
+    }
+  }
   return (
-      <div className="intro" style={{backgroundImage: imgHeader(homeHeader) || false }}>
-          <div className="call">
-            <h2>{homeHeader.display_title.text}</h2>
+      <div className="intro">
+        <div className="call">
+            <h1>{headerSectionTextInfo(homeHeader)}</h1>
             <p>
-              Estudo mostra o quanto é preciso imunizar em cada Estado para ver
-              melhoras na pandemia
+              {headerLeftText(homeHeader)}
             </p>
             <a href="/publicacoes/quao-lenta-a-vacinacao-no-brasil">Saiba mais</a>
-          </div>
+        </div>
+        <div className="intro-img" style={{backgroundImage:  "url(" + imgHeader(homeHeader) + ")"}} />
       </div>
   )
 }

@@ -40,6 +40,7 @@ export default () => (
               <li><Link to="/publicacoes">Publicações</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/imprensa">Imprensa</Link></li>
+              <li><Link to="/sobre">Sobre Nós</Link></li>
             </ul>
           </div>
           {/* <div className="footer_links_right">
@@ -47,7 +48,6 @@ export default () => (
             <ul>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/imprensa">Imprensa</Link></li>
-              <li><Link to="/sobre">Sobre</Link></li>
             </ul>
           </div> */}
         </div>

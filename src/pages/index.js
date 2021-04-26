@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts'
 import { Features } from '../components/home/features'
 import { About } from '../components/home/about'
+import { Simulator } from '../components/home/simulator'
 import { BlogPosts } from '../components/home/blogPosts'
 import { NewsPosts } from '../components/home/newsPosts'
 import { withPreview } from 'gatsby-source-prismic'
@@ -140,6 +141,8 @@ export const query = graphql`
       data {
         display_title {
           text
+          raw
+          html
         }
         body {
           ... on PrismicHomeBodyHeadlineWithButton {
@@ -206,15 +209,16 @@ export const HomePage = ({data}) => {
   const studies = data.allPrismicStudy.edges
   const posts = data.allPrismicPost.edges
   const press = data.allPrismicNews.edges
-  const homeHeader = data.prismicHome.data
+  const home = data.prismicHome.data
   return (
     <Layout>
       <div className="homePage">
-        <HomeHeader homeHeader={homeHeader} />
+        <HomeHeader homeHeader={home} />
         <div className="homeStudies container">
         <Features studies={studies}/>
         </div>
-        <About/>
+        <About about={home} />
+        <Simulator about={home} />
         <div className="homeGrid container">
           <BlogPosts posts={posts} />
           <NewsPosts press={press} />
