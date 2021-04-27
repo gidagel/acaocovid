@@ -57,10 +57,10 @@ export const Simulator = ({ about }) => {
             <div className='simulator-text'>
               <h2>{sectionTitle(about)}</h2>
               <p>{infoText(about)}</p>
-              <p><a href="https://pamgaiguer.github.io/simuladorcovid/" target="_blank">
+              <p><a href="https://pamgaiguer.github.io/simuladorcovid/" rel="noopener" target="_blank">
                 Faça uma simulação!
               </a></p>
-              <p><a href="https://www.youtube.com/watch?v=XrwUUbnVfsg" target="_blank">
+              <p><a href="https://www.youtube.com/watch?v=XrwUUbnVfsg" rel="noopener" target="_blank">
                 Veja como usar o simulador
               </a></p>
             </div>

@@ -52,12 +52,14 @@ module.exports = {
     baseUrl: "www.acaocovid.org",
     image: "/images/main_logo.jpg",
     author: '@gidagel',
-    twitterUsername: '@AcaoCovid'
+    twitterUsername: '@AcaoCovid',
+    siteUrl: `https://www.acaocovid.org`,
   },
   plugins: [
     gastbySourcePrismicConfig,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

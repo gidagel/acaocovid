@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from "gatsby-image"
 import Layout from '../../components/layouts'
-import Partners from '../../components/Partners'
 import About from '../../components/About'
+import Partners from '../../components/Partners'
 import { withPreview } from 'gatsby-source-prismic'
 
 export const query = graphql`
@@ -82,7 +81,7 @@ export const AboutPage = ({data}) => {
   return (
     <Layout>
       <About about={about} />
-      {/* <Partners /> */}
+      <Partners />
     </Layout>
   )
 }

@@ -34,12 +34,13 @@ export const HomeHeader = ({ homeHeader }) => {
       <div className="intro">
         <div className="call">
             <h1>{headerSectionTextInfo(homeHeader)}</h1>
+            <h3>Atualização do estudo entre o período de 19/03 a 19/04/21</h3>
             <p>
               {headerLeftText(homeHeader)}
             </p>
-            <a href="/publicacoes/quao-lenta-a-vacinacao-no-brasil">Saiba mais</a>
-        </div>
-        <div className="intro-img" style={{backgroundImage:  "url(" + imgHeader(homeHeader) + ")"}} />
+            <a href="/publicacoes/atualizacao-sob-que-condicoes-a-vacina-conteria-a-pandemia-no-brasil">Saiba mais</a>
+          </div>
+          <div className="intro-img" style={{backgroundImage:  "url(" + imgHeader(homeHeader) + ")"}} />
       </div>
   )
 }

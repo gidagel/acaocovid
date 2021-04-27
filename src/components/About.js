@@ -25,7 +25,7 @@ const About = ({about}) => {
             return (  
               <div className="people-container" key={person.primary.id}>
                 <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} ><h4>{person.primary.section_title.text}</h4></a>
+                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
                 <p>{person.primary.text.text}</p>
               </div>
             )
@@ -40,7 +40,7 @@ const About = ({about}) => {
             return (  
               <div className="people-container" key={person.primary.id}>
                 <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} ><h4>{person.primary.section_title.text}</h4></a>
+                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
                 <p>{person.primary.text.text}</p>
               </div>
             )
@@ -55,7 +55,7 @@ const About = ({about}) => {
             return (  
               <div className="people-container" key={person.primary.id}>
                 <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} ><h4>{person.primary.section_title.text}</h4></a>
+                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
                 <p>{person.primary.text.text}</p>
               </div>
             )
@@ -70,7 +70,7 @@ const About = ({about}) => {
             return (  
               <div className="people-container" key={person.primary.id}>
                 <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} ><h4>{person.primary.section_title.text}</h4></a>
+                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
                 <p>{person.primary.text.text}</p>
               </div>
             )

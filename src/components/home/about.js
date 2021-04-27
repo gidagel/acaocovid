@@ -17,7 +17,7 @@ export const About = ({ about }) => {
       (slice) => slice.slice_type === 'info_with_image'
     )
     if (imgSlice != null) {
-      const mainImg = imgSlice.primary.featured_image.alt
+      const mainImg = imgSlice.primary.section_title.text
       return mainImg
     }
   }
@@ -62,8 +62,8 @@ export const About = ({ about }) => {
             </div>
             <div className='about-text'>
               <h2>{sectionTitle(about)}</h2>
-              <p>{infoText(about)}</p>
               <h4>Coletivo formado por 25 pesquisadores de diversas áreas do conhecimento associados a 13 instituições pelo mundo!</h4>
+              <p>{infoText(about)}</p>
               <Link to="/sobre">
                 Conheça a equipe
               </Link>

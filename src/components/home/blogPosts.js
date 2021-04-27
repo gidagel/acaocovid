@@ -16,7 +16,7 @@ export const BlogPosts = ({ posts }) => {
         <div className='home-blogposts'>
           {posts.map((post) => (
           <div className='featured-posts' key={post.node.id}>
-            <Link to={post.node.url}>
+            <Link to={post.node.url} title={post.node.data.title.raw}>
                 <Img fluid={post.node.data.main_image.fluid} imgStyle={{height: 'auto', objectFit: 'contain', width: '100%', position: 'relative'}} />
             </Link>
           </div>

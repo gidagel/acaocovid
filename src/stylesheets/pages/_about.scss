@@ -33,9 +33,57 @@
   font-size: 0.7em;
 }
 
+.people-container h4 {
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
 .people-img {
   width: 10em;
   height: 10em;
   border-radius: 20em;
   margin: 0 auto 1em auto;
+}
+
+.partners-background {
+  background-color: $white;
+  padding: 2em 1em 0.5em 1em;
+}
+.partners-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.partners {
+  display: flex;
+  flex-direction: column;
+}
+.partners-list {
+  display: flex;
+  flex-direction: row;
+}
+.partners-content h4 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.partners-content p {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+@media (max-width: $max-width-sm) {
+  .team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .people-container {
+    max-width: 80%;
+    min-width: 80%;
+    margin: 1em auto;
+  }
 }

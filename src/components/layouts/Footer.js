@@ -25,11 +25,11 @@ export default () => (
             <li><a href="mailto:comunicamosaico@gmail.com">comunicamosaico@gmail.com</a></li>
           </ul>
           <div className="social-icons">
-            <a href="https://anchor.fm/acaocovid19" target="_blank"><SpotifyIcon /></a>
-            <a href="https://www.instagram.com/acao_covid/" target="_blank"><InstagramIcon /></a>
-            <a href="https://www.facebook.com/AcaoCovid19" target="_blank"><FacebookIcon /></a>
-            <a href="https://twitter.com/AcaoCovid" target="_blank"><TwitterIcon /></a>
-            <a href="https://www.youtube.com/c/AcaoCovid19" target="_blank"><YouTubeIcon /></a>
+            <a href="https://anchor.fm/acaocovid19" rel="noopener" title="Podcast Ação Covid" target="_blank"><SpotifyIcon /></a>
+            <a href="https://www.instagram.com/acao_covid/" rel="noopener" title="Instagram Ação Covid" target="_blank"><InstagramIcon /></a>
+            <a href="https://www.facebook.com/AcaoCovid19" rel="noopener" title="Facebook Ação Covid" target="_blank"><FacebookIcon /></a>
+            <a href="https://twitter.com/AcaoCovid" rel="noopener" title="Twitter Ação Covid" target="_blank"><TwitterIcon /></a>
+            <a href="https://www.youtube.com/c/AcaoCovid19" rel="noopener" title="YouTube Ação Covid" target="_blank"><YouTubeIcon /></a>
           </div>
         </div>
         <div className="footer_links">

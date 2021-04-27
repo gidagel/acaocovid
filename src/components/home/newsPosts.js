@@ -50,14 +50,14 @@ export const NewsPosts = ({ press }) => {
         <div className='home-blogposts'>
           {press.map((news) => (
           <div className='featured-news' key={news.node.id}>
-            <p style={{color: '#9d9d9d', fontSize: '0.8em'}}>
+            <p>
               <time>{formatDate(news.node.data.date)}</time>
             </p>
             <Link to={news.node.url}>
                 <h3>{RichText.asText(news.node.data.title.raw)}</h3>
             </Link>
             {firstParagraph(news.node.data)}
-            <button><a href={news.node.data.external_link.url} target="_blank">Ver Notícia</a></button>
+            <button><a href={news.node.data.external_link.url} rel="noopener" target="_blank">Ver Notícia</a></button>
           </div>
           ))}
         </div>
