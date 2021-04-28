@@ -59,6 +59,9 @@
   display: flex;
   flex-direction: column;
 }
+.partners h4 {
+  color: $brand-color;
+}
 .partners-list {
   display: flex;
   flex-direction: row;
@@ -74,6 +77,13 @@
 }
 
 @media (max-width: $max-width-sm) {
+  .about-us {
+    padding: 5em 0 0 0;
+  }
+  .about-us .description {
+    padding: 1em 0;
+    font-size: 0.8em;
+  }
   .team {
     display: flex;
     flex-direction: column;
@@ -82,8 +92,31 @@
   }
 
   .people-container {
-    max-width: 80%;
-    min-width: 80%;
+    max-width: 90%;
+    min-width: 90%;
     margin: 1em auto;
+  }
+  .partners-background {
+    padding: 0 1em 0.5em 1em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+  }
+  .partners {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .partners-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partners-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partners h4 {
+    margin-top: 2em;
   }
 }

@@ -38,7 +38,7 @@ const Partners = () => {
               </div>
             </div>
           </div>
-          <div classname="partners">
+          <div className="partners">
               <h4>Prêmios</h4>
               <img src={ENAP} alt="Prêmio ENAP Covid"/>
               <img src={BNDES} alt="Prêmio BNDES Covid"/>
