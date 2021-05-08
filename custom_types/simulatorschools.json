@@ -94,7 +94,7 @@
                 "config" : {
                   "constraint" : {
                     "width" : 800,
-                    "height" : 690
+                    "height" : 800
                   },
                   "thumbnails" : [ {
                     "name" : "tablet",
@@ -103,7 +103,7 @@
                   }, {
                     "name" : "mobile",
                     "width" : 400,
-                    "height" : 300
+                    "height" : 400
                   } ],
                   "label" : "featured_image"
                 }

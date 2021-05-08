@@ -1,0 +1,57 @@
+.simulator {
+  display: flex;
+  justify-content: center;
+}
+
+table tr:nth-child(2n+1){background: #f1f1f1;}
+.MuiTableRow-footer {background: white !important}
+.MUIDataTableToolbar-filterPaper-24 {
+  min-width: 80% !important;
+  max-width: 80% !important;
+}
+.MuiGrid-grid-xs-6 {
+  max-width: 100% !important;
+}
+.MuiGrid-spacing-xs-4 {
+  margin: 0 !important;
+  width: 100% !important;
+  flex-direction: column;
+}
+.MUIDataTableFilterList-chip-29 {
+  margin: 8px !important;
+} 
+.MuiButton-textPrimary, .MUIDataTableToolbar-icon-22:hover, .MUIDataTableToolbar-iconActive-23{
+  color: $brand-color !important;
+}
+
+.how-to-use {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.how-to-use > * {
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
+.how-to-use iframe {
+  width: 500px;
+  height: 280px;
+}
+
+.simulator-title {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+@media (max-width: $max-width-sm) {
+  .how-to-use iframe {
+    width: 100%;
+    height: 210px;
+  }
+
+  .simulator-title {
+    margin: 2em 0 !important;
+  }
+}
+

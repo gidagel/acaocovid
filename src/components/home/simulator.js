@@ -56,13 +56,11 @@ export const Simulator = ({ about }) => {
         <div className='about-content'>
             <div className='simulator-text'>
               <h2>{sectionTitle(about)}</h2>
+              <h3>As simulações ajudam a prever e entender os efeitos das ondas de contaminação do Covid-19</h3>
               <p>{infoText(about)}</p>
-              <p><a href="https://pamgaiguer.github.io/simuladorcovid/" rel="noopener" target="_blank">
+              <p><Link to="/simulador">
                 Faça uma simulação!
-              </a></p>
-              <p><a href="https://www.youtube.com/watch?v=XrwUUbnVfsg" rel="noopener" target="_blank">
-                Veja como usar o simulador
-              </a></p>
+              </Link></p>
             </div>
             <div className='about-img' style={{ marginBottom: 0}}>
               <img src={imgAbout(about)} alt={imgAltAbout(about)} />

@@ -17,6 +17,9 @@ const publicationSchema = require('./custom_types/publication.json')
 const studiesSchema = require('./custom_types/studies.json')
 const studySchema = require('./custom_types/study.json')
 const simulatorSchema = require('./custom_types/simulator.json')
+const methodologySchema = require('./custom_types/methodology.json')
+const simulatorterritoriesSchema = require('./custom_types/simulatorterritories.json')
+const simulatorschoolsSchema = require('./custom_types/simulatorschools.json')
 const aboutSchema = require('./custom_types/about.json')
 const homeSchema = require('./custom_types/home.json')
 
@@ -38,6 +41,9 @@ const gastbySourcePrismicConfig = {
       publication: publicationSchema,
       news: newsSchema,
       simulator: simulatorSchema,
+      methodology: methodologySchema,
+      simulatorterritories: simulatorterritoriesSchema,
+      simulatorschools: simulatorschoolsSchema,
       about: aboutSchema,
       home: homeSchema
     }
@@ -47,7 +53,7 @@ const gastbySourcePrismicConfig = {
 module.exports = {
   siteMetadata: {
     title: 'Ação Covid-19',
-    titleTemplate: "Simulador de Transmissão do Coronavírus",
+    titleTemplate: "Ação Covid-19: Modelo de Dispersão do Coronavírus",
     description: 'Ação Covid-19: grupo de pesquisadores que estudam a pandemia e a desigualdade no Brasil',
     baseUrl: "www.acaocovid.org",
     image: "/images/main_logo.jpg",
@@ -60,6 +66,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-client-side-redirect',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

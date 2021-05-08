@@ -1,5 +1,4 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
 
 export const HomeHeader = ({ homeHeader }) => {
   const imgHeader = (homeHeader) => {
@@ -16,7 +15,7 @@ export const HomeHeader = ({ homeHeader }) => {
       (slice) => slice.slice_type === 'text_info'
     )
     if (textSlice != null) {
-      const sectionTitle = textSlice.primary.section_title.text      
+      const sectionTitle = textSlice.primary.section_title.text
       return sectionTitle
     }
   }
@@ -31,16 +30,19 @@ export const HomeHeader = ({ homeHeader }) => {
     }
   }
   return (
-      <div className="intro">
-        <div className="call">
-            <h1>{headerSectionTextInfo(homeHeader)}</h1>
-            <h3>Atualização do estudo entre o período de 19/03 a 19/04/21</h3>
-            <p>
-              {headerLeftText(homeHeader)}
-            </p>
-            <a href="/publicacoes/atualizacao-sob-que-condicoes-a-vacina-conteria-a-pandemia-no-brasil">Saiba mais</a>
-          </div>
-          <div className="intro-img" style={{backgroundImage:  "url(" + imgHeader(homeHeader) + ")"}} />
+    <div className="intro">
+      <div className="call">
+        <h1>{headerSectionTextInfo(homeHeader)}</h1>
+        <h2>Atualização do estudo entre o período de 19/03 a 19/04/21</h2>
+        <p>{headerLeftText(homeHeader)}</p>
+        <a href="/publicacoes/atualizacao-sob-que-condicoes-a-vacina-conteria-a-pandemia-no-brasil">
+          Saiba mais
+        </a>
       </div>
+      <div
+        className="intro-img"
+        style={{ backgroundImage: 'url(' + imgHeader(homeHeader) + ')' }}
+      />
+    </div>
   )
 }

@@ -57,7 +57,7 @@ export const NewsPosts = ({ press }) => {
                 <h3>{RichText.asText(news.node.data.title.raw)}</h3>
             </Link>
             {firstParagraph(news.node.data)}
-            <button><a href={news.node.data.external_link.url} rel="noopener" target="_blank">Ver Notícia</a></button>
+            <button><a href={news.node.data.external_link.url} rel="noopener" target="_blank">Ver notícia</a></button>
           </div>
           ))}
         </div>

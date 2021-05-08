@@ -47,7 +47,7 @@
 
 .homePage {
   width: 100%;
-  background-color: #f6f6f6;
+  background-color: #f1f1f1;
 
   /* Header Section */
   .intro {
@@ -59,7 +59,7 @@
     height: 25em;
     background-color: #e5e5e5;
     background-size: cover;
-    background-position: center;
+    background-position: 50% 30%;
   }
   .call {
     max-width: 23em;
@@ -77,15 +77,17 @@
   .call p {
     font-size: 0.8em;
   }
+
   /* Features Section */
   .features {
-    padding: 2em 1em;
-    background: #f6f6f6;
+    padding: 0 1em 1em 1em;
+    background: #f1f1f1;
   }
   .features h2 {
     border-left: 0.4em $brand-color solid;
     padding-left: 0.5em;
     margin-bottom: 1.5em;
+    margin-top: 1.5em;
   }
   .featured-content {
     display: flex;
@@ -112,7 +114,7 @@
 
   /* About Section */
   .about {
-    padding: 3em 1em 2em 1em;
+    padding: 2em 1em 2em 1em;
     background-color: $white;
   }
   .about-content {
@@ -136,13 +138,13 @@
     padding: 1em 4em 1em 0;
   }
   .about-img {
-    min-width: 60%;
+    min-width: 50%;
   }
   .about-img img {
     width: 100%;
     border-right: 0;
     object-fit: cover;   
-    object-position: 50% 20%;
+    object-position: 50% 50%;
     height: 24em;
   }
   .about p {
@@ -165,7 +167,7 @@
   /* BlogPosts Section */
   .home-blog-featured {
     padding: 2em 0;
-    background-color: #f6f6f6;
+    background-color: #f1f1f1;
     max-width: 43%;
   }
   .featured-posts {
@@ -187,6 +189,9 @@
     font-size: 0.9em;
     margin-bottom: 0.5em;
   }
+  .featured-news a {
+    font-size: 14px;
+  }
   .home-blog-featured h2 {
     border-left: 0.4em $secondary solid;
     padding-left: 0.5em;
@@ -194,7 +199,7 @@
   .homeGrid {
     display: flex;
     flex-direction: row;
-    background-color: #f6f6f6;
+    background-color: #f1f1f1;
     justify-content: space-between;
     padding: 0 2em;
   }
@@ -210,12 +215,13 @@
       width: 100%;
     }
     .intro h1 {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 32px;
+      line-height: 40px;
     }
     .intro-img {
       height: 50vh;
       width: 100%;
+      background-position: 50% 50%;
     }
     .call {
       max-width: 100%;
@@ -226,7 +232,7 @@
     }
     .features {
       padding: 2em 0;
-      background: #f6f6f6;
+      background: #f1f1f1;
     }
     .feature-study {
       padding: 1em;
@@ -239,7 +245,7 @@
       font-size: 21px;
     }
     .about {
-      padding: 1em 0 2em 0;
+      padding: 2em 0 2em 0;
     }
     .about-text {
       margin: 0;
@@ -264,7 +270,7 @@
     /* BlogPosts Section */
     .home-blog-featured {
       padding: 2em 0 1em 0;
-      background-color: #f6f6f6;
+      background-color: #f1f1f1;
       max-width: 100%;
     }
     .featured-posts {
@@ -283,7 +289,7 @@
     }
     .homeGrid {
       flex-direction: column;
-      background-color: #f6f6f6;
+      background-color: #f1f1f1;
       padding: 0 1em;
     }
   }

@@ -1,8 +1,10 @@
 const path = require('path')
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
+  const { createPage, createRedirect } = actions
+  createRedirect({ fromPath: '/dash', toPath: '/simulador/territorios', isPermanent: true });
+  createRedirect({ fromPath: '/escolas', toPath: '/simulador/escolas', isPermanent: true });
+  
   const pages = await graphql(`
     {
       allPrismicPost {

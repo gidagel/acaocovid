@@ -1,3 +1,7 @@
+.simulator {
+  padding-top: 1em;
+}
+
 .studies-posts {
   display: flex;
   flex-direction: row;
@@ -8,8 +12,8 @@
 
   .post-summary {
     background-color: $white;
-    max-width: 38%;
-    min-width: 38%;
+    max-width: 30em;
+    min-width: 30em;
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -86,6 +90,17 @@
       .post-content {
         padding: 1em;
       }
+    }
+  }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { 
+  .studies-posts {
+    .post-summary {
+      max-width: 24em;
+      min-width: 24em;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

@@ -40,8 +40,10 @@ const Partners = () => {
           </div>
           <div className="partners">
               <h4>Prêmios</h4>
-              <img src={ENAP} alt="Prêmio ENAP Covid"/>
-              <img src={BNDES} alt="Prêmio BNDES Covid"/>
+              <div className="partners-list">
+                <img src={ENAP} alt="Prêmio ENAP Covid"/>
+                <img src={BNDES} alt="Prêmio BNDES Covid"/>
+              </div>
               <p>Concurso Desafios Covid-19 - 4º lugar</p>
           </div>
         </div>

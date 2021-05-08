@@ -5,9 +5,6 @@ import { FacebookIcon, InstagramIcon, SpotifyIcon, TwitterIcon, YouTubeIcon } fr
 export default () => (
   <footer>
     <div className="container">
-      <div className="partners">
-        
-      </div>
       <div className="footer_container">
         <div className="footer_about">
           <h3>Quem Somos</h3>
@@ -36,6 +33,7 @@ export default () => (
           <div className="footer_links_left">
             <h3>Nosso Projeto</h3>
             <ul>
+              <li><Link to="/simulador">Simulador</Link></li>
               <li><Link to="/estudos">Estudos</Link></li>
               <li><Link to="/publicacoes">Publicações</Link></li>
               <li><Link to="/blog">Blog</Link></li>

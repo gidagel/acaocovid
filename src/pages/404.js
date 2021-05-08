@@ -11,10 +11,16 @@ import { PublicationsPage } from './publicacoes/index'
 import { PressPage } from './imprensa/index'
 import { AboutPage } from './sobre/index'
 import { HomePage } from './index'
+import { SimulatorPage } from './simulador/index'
+import { SimulatorTerritoriesPage } from './simulador/territorios'
+import { SimulatorSchoolsPage } from './simulador/escolas'
+import { MethodologyPage } from './simulador/metodologia'
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>Não foi possível encontrar essa página. Volte para a <a href="/">home</a>.</h1>
+    <div className="container" style={{ padding: "2em"}}>
+      <h1>Não foi possível encontrar essa página. <br/>Volte para a <a href="/">home</a>.</h1>
+    </div>
   </Layout>
 )
 
@@ -30,6 +36,10 @@ export default withUnpublishedPreview(NotFoundPage, {
     publications: PublicationsPage,
     press: PressPage,
     about: AboutPage, 
-    home: HomePage
+    home: HomePage,
+    simulator: SimulatorPage,
+    simulatorterritories: SimulatorTerritoriesPage,
+    simulatorschools: SimulatorSchoolsPage,
+    methodology: MethodologyPage
   },
 })

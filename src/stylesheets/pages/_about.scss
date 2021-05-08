@@ -1,11 +1,14 @@
 .about-us {
-  padding: 2em 0;
-  text-align: center;
+  padding: 0 0 2em 0;
 }
 
-.about-us h3 {
-  color: $brand-color;
-  margin-top: 2em;
+.about-us h2 {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  color: $offBlack;
+  border-left: 0.4em $yellow solid;
+  padding-left: 0.5em;
+  margin-left: 0.8em;
 }
 
 .about-us .description {
@@ -16,17 +19,18 @@
 .team {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .people-container {
   background-color: $white;
   padding: 1.2em 1em 0.1em 1em;
-  max-width: 22%;
-  min-width: 22%;
-  margin: 0 1em 1em 0;
+  max-width: 14em;
+  min-width: 14em;
+  margin: 0 0 2em 0;
   text-align: left;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.05);
 }
 
 .people-container p {
@@ -78,7 +82,11 @@
 
 @media (max-width: $max-width-sm) {
   .about-us {
-    padding: 5em 0 0 0;
+    padding: 0 0 0 0;
+  }
+  .about-us h2 {
+    margin-bottom: 1em;
+    margin-left: 0;
   }
   .about-us .description {
     padding: 1em 0;
@@ -92,13 +100,11 @@
   }
 
   .people-container {
-    max-width: 90%;
-    min-width: 90%;
-    margin: 1em auto;
+    max-width: 100%;
+    margin: 1em 0;
   }
   .partners-background {
     padding: 0 1em 0.5em 1em;
-    margin-bottom: 0.5em;
     margin-top: 0.5em;
   }
   .partners {
@@ -118,5 +124,24 @@
   }
   .partners h4 {
     margin-top: 2em;
+  }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) { 
+  .people-container {
+    max-width: 15em;
+    min-width: 15em;
+    margin: 0 0 2em 0;
+  }
+  .partners {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .partners-content {
+    flex-direction: column;
+    align-items: center;
   }
 }

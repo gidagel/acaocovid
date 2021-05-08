@@ -50,6 +50,7 @@ body {
 
 main {
   padding: 0;
+  z-index: 1;
 
   @media (max-width: $max-width-sm) {
     padding: 0;

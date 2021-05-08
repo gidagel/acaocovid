@@ -55,14 +55,14 @@ export const About = ({ about }) => {
       <div className='container'>
         <div className='about-content'>
             <div className='about-img'>
-              <img src={imgAbout(about)} alt={imgAltAbout(about)} />
+              <img src={imgAbout(about)} alt="Coletivo de pesquisadores com objetivo de entender como a desigualdade afeta a pandemia no Brasil" />
               <figcaption className="image-label">
                 <small>{imgCopyAbout(about)}</small>
               </figcaption>
             </div>
             <div className='about-text'>
               <h2>{sectionTitle(about)}</h2>
-              <h4>Coletivo formado por 25 pesquisadores de diversas áreas do conhecimento associados a 13 instituições pelo mundo!</h4>
+              <h3>Coletivo formado por 25 pesquisadores de diversas áreas do conhecimento associados a 13 instituições pelo mundo!</h3>
               <p>{infoText(about)}</p>
               <Link to="/sobre">
                 Conheça a equipe

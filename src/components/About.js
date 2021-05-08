@@ -1,84 +1,150 @@
 import React from 'react'
 
-const About = ({about}) => {
-
-  const aboutSectionTextInfo = (about) => {
+const About = ({ about }) => {
+  const aboutSectionTitle = (about) => {
     const textSlice = about.body.find(
-      (slice) => slice.slice_type === 'info_with_image'
+      (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
     )
     if (textSlice != null) {
-      const sectionTitle = textSlice.primary.section_title.text      
+      const sectionTitle = textSlice.primary.section_title.text
       return sectionTitle
     }
   }
 
+  const aboutSectionDescription = (about) => {
+    const textSlice = about.body.find(
+      (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.text.text
+      return sectionTitle
+    }
+  }
+
+  const aboutSectionImg = (about) => {
+    const textSlice = about.body.find(
+      (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.featured_image.url
+      return sectionTitle
+    }
+  }
 
   return (
-    <div className="container">
-      <div className="about-us">
-        <h1>{aboutSectionTextInfo(about)}</h1>
-        <p className="description">O grupo de pesquisa interdisciplinar Ação Covid-19 conjuga pesquisa científica e ativismo social para o combate à disseminação do novo coronavírus nas cidades brasileiras, no cenário de múltiplas desigualdades que caracteriza o País. O grupo é formado por <strong>25 pesquisadores</strong> de diversas áreas do conhecimento associados a <strong>13 instituições</strong> (entre elas USP, Unicamp, UFABC, ITA, Paris Nord, Universidade de Bristol, Universidade de Liverpool).</p>
-        <h3>Equipe de Modelagem</h3>
-        <div className='team'>
-        {about.body.map((person) => {
-          if (person.primary.team === 'Modelagem') {
-            return (  
-              <div className="people-container" key={person.primary.id}>
-                <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
-                <p>{person.primary.text.text}</p>
-              </div>
-            )
-          }
-        })}
-        </div>
-
-        <h3>Equipe de Conjuntura</h3>
-        <div className='team'>
-        {about.body.map((person) => {
-          if (person.primary.team === 'Conjuntura') {
-            return (  
-              <div className="people-container" key={person.primary.id}>
-                <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
-                <p>{person.primary.text.text}</p>
-              </div>
-            )
-          }
-        })}
-        </div>
-
-        <h3>Equipe de Estatistica</h3>
-        <div className='team'>
-        {about.body.map((person) => {
-          if (person.primary.team === 'Estatistica') {
-            return (  
-              <div className="people-container" key={person.primary.id}>
-                <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
-                <p>{person.primary.text.text}</p>
-              </div>
-            )
-          }
-        })}
-        </div>
-
-        <h3>Equipe de Comunicação</h3>
-        <div className='team'>
-        {about.body.map((person) => {
-          if (person.primary.team === 'Comunicacao') {
-            return (  
-              <div className="people-container" key={person.primary.id}>
-                <div className="people-img" style={{backgroundImage:  "url(" + person.primary.featured_image.url + ")", backgroundSize: "cover"}} />
-                <a href={person.primary.cvlink.url} target="_blank"><h4>{person.primary.section_title.text}</h4></a>
-                <p>{person.primary.text.text}</p>
-              </div>
-            )
-          }
-        })}
+    <>
+      <div className="homePage">
+        <div className="intro">
+          <div className="call">
+            <h1>{aboutSectionTitle(about)}</h1>
+            <p style={{ marginBottom: 0 }}>{aboutSectionDescription(about)}</p>
+          </div>
+          <div
+            className="intro-img"
+            style={{ backgroundImage: 'url(' + aboutSectionImg(about) + ')'}}
+          />
         </div>
       </div>
-    </div>
+      <div className="container">
+        <div className="about-us">
+          <h2>Equipe de Modelagem</h2>
+          <div className="team">
+            {about.body.map((person) => {
+              if (person.primary.team === 'Modelagem') {
+                return (
+                  <div className="people-container" key={person.primary.id}>
+                    <div
+                      className="people-img"
+                      style={{
+                        backgroundImage:
+                          'url(' + person.primary.featured_image.url + ')',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+                    <a href={person.primary.cvlink.url} target="_blank">
+                      <h4>{person.primary.section_title.text}</h4>
+                    </a>
+                    <p>{person.primary.text.text}</p>
+                  </div>
+                )
+              }
+            })}
+          </div>
+
+          <h2>Equipe de Conjuntura</h2>
+          <div className="team">
+            {about.body.map((person) => {
+              if (person.primary.team === 'Conjuntura') {
+                return (
+                  <div className="people-container" key={person.primary.id}>
+                    <div
+                      className="people-img"
+                      style={{
+                        backgroundImage:
+                          'url(' + person.primary.featured_image.url + ')',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+                    <a href={person.primary.cvlink.url} target="_blank">
+                      <h4>{person.primary.section_title.text}</h4>
+                    </a>
+                    <p>{person.primary.text.text}</p>
+                  </div>
+                )
+              }
+            })}
+          </div>
+
+          <h2>Equipe de Estatística</h2>
+          <div className="team">
+            {about.body.map((person) => {
+              if (person.primary.team === 'Estatistica') {
+                return (
+                  <div className="people-container" key={person.primary.id}>
+                    <div
+                      className="people-img"
+                      style={{
+                        backgroundImage:
+                          'url(' + person.primary.featured_image.url + ')',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+                    <a href={person.primary.cvlink.url} target="_blank">
+                      <h4>{person.primary.section_title.text}</h4>
+                    </a>
+                    <p>{person.primary.text.text}</p>
+                  </div>
+                )
+              }
+            })}
+          </div>
+
+          <h2>Equipe de Comunicação</h2>
+          <div className="team">
+            {about.body.map((person) => {
+              if (person.primary.team === 'Comunicacao') {
+                return (
+                  <div className="people-container" key={person.primary.id}>
+                    <div
+                      className="people-img"
+                      style={{
+                        backgroundImage:
+                          'url(' + person.primary.featured_image.url + ')',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+                    <a href={person.primary.cvlink.url} target="_blank">
+                      <h4>{person.primary.section_title.text}</h4>
+                    </a>
+                    <p>{person.primary.text.text}</p>
+                  </div>
+                )
+              }
+            })}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
