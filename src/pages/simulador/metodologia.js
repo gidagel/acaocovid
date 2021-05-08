@@ -159,7 +159,7 @@ const PostBody = ({ blogPost, ...props }) => {
   )
 }
 
-export const Methodology = ({ data }) => {
+export const MethodologyPage = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
   const post = data.prismicMethodology
@@ -173,4 +173,4 @@ export const Methodology = ({ data }) => {
   )
 }
 
-export default withPreview(Methodology)
+export default withPreview(MethodologyPage)
