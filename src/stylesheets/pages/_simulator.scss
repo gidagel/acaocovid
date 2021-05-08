@@ -44,6 +44,7 @@ table tr:nth-child(2n+1){background: #f1f1f1;}
   margin-left: 1em;
 }
 
+
 @media (max-width: $max-width-sm) {
   .how-to-use iframe {
     width: 100%;
@@ -52,6 +53,10 @@ table tr:nth-child(2n+1){background: #f1f1f1;}
 
   .simulator-title {
     margin: 2em 0 !important;
+  }
+
+  .jss24 {
+    max-width: 80% !important;
   }
 }
 
