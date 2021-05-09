@@ -56,7 +56,7 @@ export const Simulator = ({ about }) => {
         <div className='about-content'>
             <div className='simulator-text'>
               <h2>{sectionTitle(about)}</h2>
-              <h3>As simulações ajudam a prever e entender os efeitos das ondas de contaminação do Covid-19</h3>
+              <h3>Nossos simuladores ajudam a prever e entender os efeitos das ondas de contaminação do Covid-19</h3>
               <p>{infoText(about)}</p>
               <p><Link to="/simulador">
                 Faça uma simulação!
