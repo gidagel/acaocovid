@@ -155,6 +155,7 @@ const PostBody = ({ blogPost, ...props }) => {
           <PostSlices slices={blogPost.data.body} />
         </div>
       </div>
+      <br />
     </article>
   )
 }
