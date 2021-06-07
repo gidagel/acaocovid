@@ -121,7 +121,7 @@ const PostBody = ({ publicationPost, props }) => {
 
   let postDate = Date(publicationPost.data.date)
   postDate = postDate
-    ? new Intl.DateTimeFormat('pt-BR', {
+    ? new Intl.DateTimeFormat('pt', {
       month: '2-digit',
       day: '2-digit',
       year: 'numeric',

@@ -30,7 +30,7 @@ export const NewsPosts = ({ press }) => {
   const formatDate = (props) => {
     let postDate = Date(props)
     postDate = postDate
-      ? new Intl.DateTimeFormat('pt-BR', {
+      ? new Intl.DateTimeFormat('pt', {
         month: '2-digit',
         day: '2-digit',
         year: 'numeric',
