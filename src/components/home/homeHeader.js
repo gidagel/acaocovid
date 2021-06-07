@@ -33,9 +33,9 @@ export const HomeHeader = ({ homeHeader }) => {
     <div className="intro">
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
-        <h2>Atualização do estudo entre o período de 19/03 a 19/04/21</h2>
+        <h2>Atualização do estudo entre o período de 19/04 a 19/05/21</h2>
         <p>{headerLeftText(homeHeader)}</p>
-        <a href="/publicacoes/atualizacao-sob-que-condicoes-a-vacina-conteria-a-pandemia-no-brasil">
+        <a href="/publicacoes/atualizacao-a-vacina-conteria-a-pandemia-no-brasil">
           Saiba mais
         </a>
       </div>
