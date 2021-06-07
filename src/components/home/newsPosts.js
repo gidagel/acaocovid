@@ -53,9 +53,9 @@ export const NewsPosts = ({ press }) => {
             <p>
               <time>{formatDate(news.node.data.date)}</time>
             </p>
-            <Link to={news.node.url}>
-                <h3>{RichText.asText(news.node.data.title.raw)}</h3>
-            </Link>
+            <a href={news.node.data.external_link.url} rel="noopener" target="_blank">
+              <h3>{RichText.asText(news.node.data.title.raw)}</h3>
+            </a>
             {firstParagraph(news.node.data)}
             <button><a href={news.node.data.external_link.url} rel="noopener" target="_blank">Ver notícia</a></button>
           </div>
