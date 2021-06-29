@@ -196,6 +196,7 @@ export const query = graphql`
               }
               section_title {
                 text
+                raw
               }
             }
           }

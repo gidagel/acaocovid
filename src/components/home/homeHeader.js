@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from '../SEO'
 
 export const HomeHeader = ({ homeHeader }) => {
   const imgHeader = (homeHeader) => {
@@ -20,6 +21,16 @@ export const HomeHeader = ({ homeHeader }) => {
     }
   }
 
+  const headerTitle = (homeHeader) => {
+    const textSlice = homeHeader.body.find(
+      (slice) => slice.slice_type === 'text_info'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.section_title.raw
+      return sectionTitle
+    }
+  }
+
   const headerLeftText = (homeHeader) => {
     const textSlice = homeHeader.body.find(
       (slice) => slice.slice_type === 'text_info'
@@ -31,6 +42,14 @@ export const HomeHeader = ({ homeHeader }) => {
   }
   return (
     <div className="intro">
+      <SEO
+        post={{
+          image: imgHeader(homeHeader) || false,
+          title: headerTitle(homeHeader),
+          url: '/',
+          description: headerLeftText(homeHeader)
+        }}
+      />
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
         <h2>Atualização do estudo entre o período de 19/04 a 19/05/21</h2>

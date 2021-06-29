@@ -40,9 +40,11 @@ query {
             team
             text {
               text
+              raw
             }
             section_title {
               text
+              raw
             }
             featured_image {
               url
@@ -64,6 +66,7 @@ query {
             }
             section_title {
               text
+              raw
             }
           }
           slice_type

@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import Layout from '../../components/layouts'
 import PublicationsPosts from '../../components/PublicationsPosts'
 import { withPreview } from 'gatsby-source-prismic'
+import SEO from '../../components/SEO'
 
 // Query for the Blog Home content in Prismic
 export const query = graphql`
@@ -12,15 +13,18 @@ export const query = graphql`
       data {
         description {
           text
+          raw
         }
         headline {
           text
+          raw
         }
         image {
           alt
           fluid {
             ...GatsbyPrismicImageFluid
           }
+          url
         }
       }
       id
@@ -80,6 +84,14 @@ export const query = graphql`
 const ArticleHead = ({ page }) => {
   return (
     <div className="home-header" data-wio-id={page.id}>
+      <SEO
+        post={{
+          image: page.image.url,
+          title: page.headline.raw,
+          url: '/publicacoes',
+          description: page.description.text
+        }}
+      />
       <div className="blog-header">
         <Img 
           fluid={page.image.fluid} 

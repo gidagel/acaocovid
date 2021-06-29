@@ -17,7 +17,7 @@ const SEO = ({ post }) => {
   `);
   const defaults = data.site.siteMetadata;
   const seo = {
-    title: RichText.asText(post.title || defaults.title),
+    title: RichText.asText(post.title),
     description: post.description || defaults.description,
     url: `${defaults.baseUrl}${post.url || ''}`,
   }

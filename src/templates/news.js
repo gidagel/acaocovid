@@ -30,14 +30,15 @@ const PostBody = ({ newsPost }) => {
   return (
     <div className="container">
       <div className="post-header">
-        <h1>
+        <h2>
           {RichText.asText(newsPost.title.raw).length !== 0
             ? RichText.asText(newsPost.title.raw)
             : 'Untitled'}
-        </h1>
+        </h2>
         <a href={newsPost.external_link.url} target="_blank">
           Conferir notícia completa
         </a>
+        <br />
       </div>
     </div>
   )

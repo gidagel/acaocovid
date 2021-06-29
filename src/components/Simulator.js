@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from './SEO'
 
 const Simulator = ({ simulator }) => {
   const simulatorSectionTitle = (simulator) => {
@@ -33,6 +34,14 @@ const Simulator = ({ simulator }) => {
 
   return (
     <div className="intro">
+      <SEO
+        post={{
+          image: imgHeader(simulator),
+          title: simulator.display_title.raw,
+          url: '/simulador',
+          description: simulatorSectionTitle(simulator)
+        }}
+      />
       <div className="call">
         <h1>{simulator.display_title.text}</h1>
         <h3>{simulatorSectionTitle(simulator)}</h3>

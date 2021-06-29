@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from './SEO'
 
 const About = ({ about }) => {
   const aboutSectionTitle = (about) => {
@@ -21,6 +22,26 @@ const About = ({ about }) => {
     }
   }
 
+  const aboutSEOTitle = (about) => {
+    const textSlice = about.body.find(
+      (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.section_title.raw
+      return sectionTitle
+    }
+  }
+
+  const aboutSEODescription = (about) => {
+    const textSlice = about.body.find(
+      (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.text.raw
+      return sectionTitle
+    }
+  }
+
   const aboutSectionImg = (about) => {
     const textSlice = about.body.find(
       (slice) => slice.id === '9aadd03b-bae8-5cd6-abc0-254b183f16ea'
@@ -34,6 +55,14 @@ const About = ({ about }) => {
   return (
     <>
       <div className="homePage">
+        <SEO
+          post={{
+            image: aboutSectionImg(about),
+            title: aboutSEOTitle(about),
+            url: '/sobre',
+            description: aboutSEODescription(about)
+          }}
+        />
         <div className="intro">
           <div className="call">
             <h1>{aboutSectionTitle(about)}</h1>
