@@ -45,7 +45,6 @@ export const HomeHeader = ({ homeHeader }) => {
       <SEO
         post={{
           image: imgHeader(homeHeader) || false,
-          title: headerTitle(homeHeader),
           url: '/',
           description: headerLeftText(homeHeader)
         }}
