@@ -56,12 +56,14 @@
 }
 .partners-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .partners {
   display: flex;
   flex-direction: column;
+  margin: 1.5em 0;
 }
 .partners h4 {
   color: $brand-color;
