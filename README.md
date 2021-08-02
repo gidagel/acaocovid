@@ -1,6 +1,9 @@
 Tech:
+- React.js
+- GraphQL
+- SCSS
 
-- React
+Providers:
 - Prismic
 - Firebase
 - Gatsby
