@@ -46,13 +46,13 @@ export const HomeHeader = ({ homeHeader }) => {
         post={{
           image: imgHeader(homeHeader) || false,
           url: '/',
-          title: 'Ação Covid-19',
+          title: headerSectionTextInfo(homeHeader),
           description: headerLeftText(homeHeader)
         }}
       />
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
-        <h2>{headerLeftText(homeHeader)}</h2>
+        <h3>{headerLeftText(homeHeader)}</h3>
         <p>{headerRightText(homeHeader)}</p>
         <a href="/publicacoes/possiveis-cenarios-da-pandemia-no-brasil-sob-diferentes">
           Saiba mais
