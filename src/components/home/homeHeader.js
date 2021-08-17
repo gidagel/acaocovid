@@ -21,16 +21,6 @@ export const HomeHeader = ({ homeHeader }) => {
     }
   }
 
-  const headerTitle = (homeHeader) => {
-    const textSlice = homeHeader.body.find(
-      (slice) => slice.slice_type === 'text_info'
-    )
-    if (textSlice != null) {
-      const sectionTitle = textSlice.primary.section_title.raw
-      return sectionTitle
-    }
-  }
-
   const headerLeftText = (homeHeader) => {
     const textSlice = homeHeader.body.find(
       (slice) => slice.slice_type === 'text_info'
@@ -40,20 +30,31 @@ export const HomeHeader = ({ homeHeader }) => {
       return leftColumn
     }
   }
+
+  const headerRightText = (homeHeader) => {
+    const textSlice = homeHeader.body.find(
+      (slice) => slice.slice_type === 'text_info'
+    )
+    if (textSlice != null) {
+      const leftColumn = textSlice.primary.right_column_text.text
+      return leftColumn
+    }
+  }
   return (
     <div className="intro">
       <SEO
         post={{
           image: imgHeader(homeHeader) || false,
           url: '/',
+          title: 'Ação Covid-19',
           description: headerLeftText(homeHeader)
         }}
       />
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
-        <h2>Atualização do estudo entre o período de 19/04 a 19/05/21</h2>
-        <p>{headerLeftText(homeHeader)}</p>
-        <a href="/publicacoes/atualizacao-a-vacina-conteria-a-pandemia-no-brasil">
+        <h2>{headerLeftText(homeHeader)}</h2>
+        <p>{headerRightText(homeHeader)}</p>
+        <a href="/publicacoes/possiveis-cenarios-da-pandemia-no-brasil-sob-diferentes">
           Saiba mais
         </a>
       </div>
