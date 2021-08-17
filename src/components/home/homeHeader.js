@@ -42,14 +42,6 @@ export const HomeHeader = ({ homeHeader }) => {
   }
   return (
     <div className="intro">
-      <SEO
-        post={{
-          image: imgHeader(homeHeader) || false,
-          url: '/',
-          title: headerSectionTextInfo(homeHeader),
-          description: headerLeftText(homeHeader)
-        }}
-      />
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
         <h3>{headerLeftText(homeHeader)}</h3>
