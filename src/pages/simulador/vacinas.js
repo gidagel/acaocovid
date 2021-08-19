@@ -144,7 +144,7 @@ export const SimulatorVacinePage = () => {
             scrolling="yes"
             frameBorder="0"
             width="940px"
-            height="580px"
+            height="600px"
           />
         )}
         {size.width < 728 && (
@@ -153,7 +153,7 @@ export const SimulatorVacinePage = () => {
             scrolling="yes"
             frameBorder="0"
             width="100%"
-            height="1560px"
+            height="1580px"
           />
         )}
       </div>
