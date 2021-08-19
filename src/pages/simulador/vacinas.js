@@ -4,7 +4,6 @@ import { dadosIPC } from '../../components/DadosIPC'
 import { withPreview } from 'gatsby-source-prismic'
 import MUIDataTable from "mui-datatables";
 
-
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
@@ -133,7 +132,7 @@ const options = {
   }
 };
 
-export const SimulatorTerritoriesPage = () => {
+export const SimulatorVacinePage = () => {
   const size = useWindowSize()
 
   return (
@@ -141,7 +140,7 @@ export const SimulatorTerritoriesPage = () => {
       <div className="simulator">
         {size.width > 728 && (
           <iframe
-            src="https://gidagel.github.io/simuladorcovid/"
+            src="https://gidagel.github.io/simuladorcovidvacina/"
             scrolling="yes"
             frameBorder="0"
             width="940px"
@@ -150,7 +149,7 @@ export const SimulatorTerritoriesPage = () => {
         )}
         {size.width < 728 && (
           <iframe
-            src="https://gidagel.github.io/simuladorcovidmobile/"
+            src="https://gidagel.github.io/simuladorcovidvacinamobile/"
             scrolling="yes"
             frameBorder="0"
             width="100%"
@@ -164,27 +163,8 @@ export const SimulatorTerritoriesPage = () => {
       columns={columns}
       options={options}
     />
-    <div className="homePage container">
-        <div className="simulator-text simulator-title">
-          <h2>Como usar o simulador dos territórios?</h2>
-        </div>
-        <div className="how-to-use">
-          <iframe
-            src="https://www.youtube.com/embed/GFX7rktNf1k"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-          <iframe
-            src="https://www.youtube.com/embed/XrwUUbnVfsg"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
     </Layout>
   )
 }
 
-export default withPreview(SimulatorTerritoriesPage)
+export default withPreview(SimulatorVacinePage)

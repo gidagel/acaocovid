@@ -20,6 +20,7 @@ const simulatorSchema = require('./custom_types/simulator.json')
 const methodologySchema = require('./custom_types/methodology.json')
 const simulatorterritoriesSchema = require('./custom_types/simulatorterritories.json')
 const simulatorschoolsSchema = require('./custom_types/simulatorschools.json')
+const simulatorvacineSchema = require('./custom_types/simulatorvacine.json')
 const aboutSchema = require('./custom_types/about.json')
 const homeSchema = require('./custom_types/home.json')
 
@@ -44,6 +45,7 @@ const gastbySourcePrismicConfig = {
       methodology: methodologySchema,
       simulatorterritories: simulatorterritoriesSchema,
       simulatorschools: simulatorschoolsSchema,
+      simulatorvacine: simulatorvacineSchema,
       about: aboutSchema,
       home: homeSchema
     }

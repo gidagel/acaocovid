@@ -5,7 +5,7 @@ export const Methodology = ({ simulator }) => {
 
   const imgSimulator = (simulator) => {
     const imgSlice = simulator.body.find(
-      (slice) => slice.id === "6895452b-4c23-5ca8-92a2-2d7bb0825857"
+      (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
     )
     if (imgSlice != null) {
       const mainImg = imgSlice.primary.featured_image.url
@@ -14,7 +14,7 @@ export const Methodology = ({ simulator }) => {
   }
   const imgAltSimulator = (simulator) => {
     const imgSlice = simulator.body.find(
-      (slice) => slice.id === "6895452b-4c23-5ca8-92a2-2d7bb0825857"
+      (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
     )
     if (imgSlice != null) {
       const mainImg = imgSlice.primary.featured_image.alt
@@ -23,7 +23,7 @@ export const Methodology = ({ simulator }) => {
   }
   const sectionTitle = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === "6895452b-4c23-5ca8-92a2-2d7bb0825857"
+      (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.section_title.text      
@@ -33,7 +33,7 @@ export const Methodology = ({ simulator }) => {
 
   const infoText = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === "6895452b-4c23-5ca8-92a2-2d7bb0825857"
+      (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
     )
     if (textSlice != null) {
       const leftColumn = textSlice.primary.text.text

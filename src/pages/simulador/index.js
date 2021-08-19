@@ -78,7 +78,7 @@ export const query = graphql`
 const SimulatorTerritoriesSummary = ({ simulator }) => {
   const simulatorSectionTitle = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === '44fa1483-19cb-5a5d-8df9-e74766bfb3fb'
+      (slice) => slice.id === 'c53ec4a8-a88f-50a0-958c-2f265aaac658'
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.section_title.text
@@ -87,7 +87,7 @@ const SimulatorTerritoriesSummary = ({ simulator }) => {
   }
   const simulatorSectionDescription = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === '44fa1483-19cb-5a5d-8df9-e74766bfb3fb'
+      (slice) => slice.id === 'c53ec4a8-a88f-50a0-958c-2f265aaac658'
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.left_column_text.text
@@ -116,7 +116,7 @@ const SimulatorTerritoriesSummary = ({ simulator }) => {
 const SimulatorSchoolsSummary = ({ simulator }) => {
   const simulatorSectionTitle = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === 'c53ec4a8-a88f-50a0-958c-2f265aaac658'
+      (slice) => slice.id === '6895452b-4c23-5ca8-92a2-2d7bb0825857'
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.section_title.text
@@ -125,13 +125,14 @@ const SimulatorSchoolsSummary = ({ simulator }) => {
   }
   const simulatorSectionDescription = (simulator) => {
     const textSlice = simulator.body.find(
-      (slice) => slice.id === 'c53ec4a8-a88f-50a0-958c-2f265aaac658'
+      (slice) => slice.id === '6895452b-4c23-5ca8-92a2-2d7bb0825857'
     )
     if (textSlice != null) {
       const sectionTitle = textSlice.primary.left_column_text.text
       return sectionTitle
     }
   }
+
   return (
     <>
       <div className="post-summary">
@@ -151,6 +152,44 @@ const SimulatorSchoolsSummary = ({ simulator }) => {
   )
 }
 
+const SimulatorVacineSummary = ({ simulator }) => {
+  const simulatorSectionTitle = (simulator) => {
+    const textSlice = simulator.body.find(
+      (slice) => slice.id === '44fa1483-19cb-5a5d-8df9-e74766bfb3fb'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.section_title.text
+      return sectionTitle
+    }
+  }
+  const simulatorSectionDescription = (simulator) => {
+    const textSlice = simulator.body.find(
+      (slice) => slice.id === '44fa1483-19cb-5a5d-8df9-e74766bfb3fb'
+    )
+    if (textSlice != null) {
+      const sectionTitle = textSlice.primary.left_column_text.text
+      return sectionTitle
+    }
+  }
+return (
+  <>
+    <div className="post-summary">
+      <div className="post-content">
+        <h2>
+          <Link to="/simulador/escolas">
+            {simulatorSectionTitle(simulator)}
+          </Link>
+        </h2>
+        <p>{simulatorSectionDescription(simulator)}</p>
+        <button>
+          <Link to="/simulador/vacinas">Ver mais</Link>
+        </button>
+      </div>
+    </div>
+  </>
+)
+}
+
 export const SimulatorPage = ({ data }) => {
   const simulator = data.prismicSimulator.data
 
@@ -160,6 +199,7 @@ export const SimulatorPage = ({ data }) => {
         <Simulator simulator={simulator} />
       </div>
       <div className="studies-posts container simulator">
+        <SimulatorVacineSummary simulator={simulator} />
         <SimulatorTerritoriesSummary simulator={simulator} />
         <SimulatorSchoolsSummary simulator={simulator} />
       </div>

@@ -54,6 +54,24 @@
     "value": "simulator.json"
   },
   {
+    "id": "simulatorterritories",
+    "name": "Simulator Territories",
+    "repeatable": false,
+    "value": "simulatorterritories.json"
+  },
+  {
+    "id": "simulatorschools",
+    "name": "Simulator Schools",
+    "repeatable": false,
+    "value": "simulatorschools.json"
+  },
+  {
+    "id": "simulatorvacine",
+    "name": "Simulator Vacine",
+    "repeatable": false,
+    "value": "simulatorvacine.json"
+  },
+  {
     "id": "press",
     "name": "Press",
     "repeatable": false,
