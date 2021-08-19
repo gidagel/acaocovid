@@ -176,7 +176,7 @@ return (
     <div className="post-summary">
       <div className="post-content">
         <h2>
-          <Link to="/simulador/escolas">
+          <Link to="/simulador/vacinas">
             {simulatorSectionTitle(simulator)}
           </Link>
         </h2>
