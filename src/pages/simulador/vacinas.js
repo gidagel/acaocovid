@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layouts'
-import { dadosIPC } from '../../components/DadosIPC'
+import { dadosIPCMun } from '../../components/DadosIPCMun'
 import { withPreview } from 'gatsby-source-prismic'
 import MUIDataTable from "mui-datatables";
 
@@ -35,16 +35,8 @@ const columns = [
     name: "cidade",
     label: "Cidade",
     options: {
-      filter: true,
-      sort: false
-    },
-  },
-  {
-    name: "bairro",
-    label: "Bairro",
-    options: {
       filter: false,
-      sort: false,
+      sort: false
     },
   },
   {
@@ -56,26 +48,10 @@ const columns = [
     },
   },
   {
-    name: "classIPC",
+    name: "classeIPC",
     label: "Classe do IPC",
     options: {
-      filter: false,
-      sort: false,
-    },
-  },
-  {
-    name: "idh",
-    label: "IDH",
-    options: {
-      filter: false,
-      sort: false,
-    },
-  },
-  {
-    name: "classIDH",
-    label: "Classe do IDH",
-    options: {
-      filter: false,
+      filter: true,
       sort: false,
     },
   },
@@ -158,8 +134,8 @@ export const SimulatorVacinePage = () => {
         )}
       </div>
       <MUIDataTable
-      title={"Tabela 1: Índice de Proteção ao Covid-19"}
-      data={dadosIPC}
+      title={"Tabela 1: Índice de Proteção ao Covid-19 por Municípios"}
+      data={dadosIPCMun}
       columns={columns}
       options={options}
     />
