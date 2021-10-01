@@ -137,6 +137,38 @@ export const query = graphql`
         }
       }
     }
+    allPrismicPublication(
+      sort: { fields: data___date, order: DESC }
+      limit: 4
+      filter: {data: {categories: {elemMatch: {category: {tags: {eq: "publicacoes"}}}}}}
+      ) {
+      edges {
+        node {
+          id
+          url
+          uid
+          type
+          data {
+            title {
+              raw
+            }
+            date
+            body {
+              ... on PrismicPublicationBodyText {
+                id
+                slice_label
+                slice_type
+                primary {
+                  text {
+                    raw
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     prismicHome {
       data {
         display_title {
@@ -211,15 +243,16 @@ export const HomePage = ({data}) => {
   const posts = data.allPrismicPost.edges
   const press = data.allPrismicNews.edges
   const home = data.prismicHome.data
+  const publications = data.allPrismicPublication.edges
   return (
     <Layout>
       <div className="homePage">
         <HomeHeader homeHeader={home} />
         <div className="homeStudies container">
-        <Features studies={studies}/>
+        <Features studies={publications}/>
         </div>
-        <About about={home} />
         <Simulator about={home} />
+        <About about={home} />
         <div className="homeGrid container">
           <BlogPosts posts={posts} />
           <NewsPosts press={press} />

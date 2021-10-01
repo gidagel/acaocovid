@@ -44,7 +44,7 @@ export const HomeHeader = ({ homeHeader }) => {
     <div className="intro">
       <div className="call">
         <h1>{headerSectionTextInfo(homeHeader)}</h1>
-        <h3>{headerLeftText(homeHeader)}</h3>
+        <h2>{headerLeftText(homeHeader)}</h2>
         <p>{headerRightText(homeHeader)}</p>
         <a href="/publicacoes/possiveis-cenarios-da-pandemia-no-brasil-sob-diferentes">
           Saiba mais

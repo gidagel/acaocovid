@@ -19,7 +19,7 @@ const HeaderLinks = (props) => {
         <div className="logo">
           <a href="/" aria-label="Ação Covid-19 Home">
             <div className="logo">
-              <img src={mainLogo} style={{width: '100%', height: 'auto'}} alt="Ação Covid-19 Logo Principal"/>
+              <img src={mainLogo} style={{width: '100%', height: '4em'}} alt="Ação Covid-19 Logo Principal"/>
             </div>
           </a>
         </div>

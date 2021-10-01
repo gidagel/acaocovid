@@ -19,7 +19,7 @@ export const Features = ({ studies }) => {
 
   return (
     <div className="features">
-        <h2>A Cidade e os Bairros</h2>
+        <h2>Publicações</h2>
         <div className="featured-content">
         {studies.map((study) => (
           <div className="feature-study" key={study.node.id}>

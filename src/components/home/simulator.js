@@ -12,24 +12,6 @@ export const Simulator = ({ about }) => {
       return mainImg
     }
   }
-  const imgAltAbout = (about) => {
-    const imgSlice = about.body.find(
-      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
-    )
-    if (imgSlice != null) {
-      const mainImg = imgSlice.primary.featured_image.alt
-      return mainImg
-    }
-  }
-  const imgCopyAbout = (about) => {
-    const imgSlice = about.body.find(
-      (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
-    )
-    if (imgSlice != null) {
-      const mainImg = imgSlice.primary.featured_image.copyright
-      return mainImg
-    }
-  }
   const sectionTitle = (about) => {
     const textSlice = about.body.find(
       (slice) => slice.id === "d01fc12c-d37c-5224-93fc-fb914ddae758"
@@ -63,7 +45,7 @@ export const Simulator = ({ about }) => {
               </Link></p>
             </div>
             <div className='about-img' style={{ marginBottom: 0}}>
-              <img src={imgAbout(about)} alt={imgAltAbout(about)} />
+              <img src={imgAbout(about)} alt={sectionTitle(about)} />
             </div>
           </div>
       </div>

@@ -12,15 +12,6 @@ export const Methodology = ({ simulator }) => {
       return mainImg
     }
   }
-  const imgAltSimulator = (simulator) => {
-    const imgSlice = simulator.body.find(
-      (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
-    )
-    if (imgSlice != null) {
-      const mainImg = imgSlice.primary.featured_image.alt
-      return mainImg
-    }
-  }
   const sectionTitle = (simulator) => {
     const textSlice = simulator.body.find(
       (slice) => slice.id === "7f805f67-94d0-5850-a133-2c0b84a4f224"
@@ -53,7 +44,7 @@ export const Methodology = ({ simulator }) => {
               </p>
             </div>
             <div className='about-img' style={{ marginBottom: 0}}>
-              <img src={imgSimulator(simulator)} alt={imgAltSimulator(simulator)} />
+              <img src={imgSimulator(simulator)} alt={sectionTitle(simulator)} />
             </div>
           </div>
       </div>
